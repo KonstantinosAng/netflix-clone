@@ -5,7 +5,7 @@ import requests from './requests.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Banner />
       <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending}/>
