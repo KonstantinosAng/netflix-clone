@@ -12,6 +12,7 @@
 }
 
 .nav__logo {
+  cursor: pointer;
   position: fixed;
   left: 1.25rem;
   width: 5rem;
