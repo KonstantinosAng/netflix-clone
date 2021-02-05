@@ -52,6 +52,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
           src={`${requests.baseUrl}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} 
           alt={movie.name} />
         ))}
+        <div className={`row__navigation ${isLargeRow && "row__navigationLarge"}`}>
+          {">"}
+        </div>
       </div>
       {trailerUrl && <YouTube videoId={trailerUrl} opt={opts} />}
     </div>

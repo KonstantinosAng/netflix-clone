@@ -15,9 +15,10 @@
 }
 
 .row__poster {
+  cursor: pointer;
   object-fit: contain;
   width: 100%;
-  max-height: 100px;
+  max-height: 130px;
   transition: transform 500ms;
   margin-right: .5rem;
 }
@@ -27,9 +28,33 @@
 }
 
 .row__posterLarge {
-  max-height: 15.625rem;
+  max-height: 21rem;
 }
 
 .row__posterLarge:hover {
   transform: scale(1.09);
+}
+
+.row__navigationLarge {
+  margin-top: 7.5rem!important;
+}
+
+.row__navigation {
+  align-items: center;
+  object-fit: contain;
+  text-align: center;
+  position: absolute;
+  margin-top: 2.1rem;
+  margin-left: 78.3rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 400ms;
+  transform: scale(3);
+  width: 1.5rem;
+  height: 1.2rem;
+}
+
+.row__navigation:hover {
+  color: gray;
+  transform: scale(3.8);
 }

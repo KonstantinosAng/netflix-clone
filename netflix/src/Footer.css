@@ -1,0 +1,32 @@
+.footer {
+  height: 20rem;
+}
+
+.footer__social {
+  display: flex;
+  margin: 0 10rem;
+  margin-top: 5rem;
+}
+
+.social {
+  color: gray;
+  justify-content: space-evenly;
+  margin: auto .8rem;
+  font-size: 2rem;
+}
+
+.footer__row {
+  display: flex;
+  margin: 1rem 7.9rem;
+  color: gray;
+  cursor: pointer;
+}
+
+h5:hover {
+  text-decoration: underline;
+  text-decoration: gray;
+}
+
+.footer__row h5 {
+  margin: 0 3rem;
+}
