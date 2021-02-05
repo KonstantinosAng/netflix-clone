@@ -27,7 +27,7 @@
 }
 
 .row__posterLarge {
-  max-height: 250px;
+  max-height: 15.625rem;
 }
 
 .row__posterLarge:hover {
