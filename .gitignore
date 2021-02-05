@@ -1,1 +1,16 @@
 .env
+netflix/node_modules
+netflix/.pnp
+netflix/.pnp.js
+netflix/coverage
+netflix/build
+# misc
+netflix/.DS_Store
+netflix/.env.local
+netflix/.env.development.local
+netflix/.env.test.local
+netflix/.env.production.local
+
+netflix/npm-debug.log*
+netflix/yarn-debug.log*
+netflix/yarn-error.log*
