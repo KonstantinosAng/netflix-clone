@@ -21,6 +21,16 @@ function Nav() {
   }, []);
 
   useEffect(() => {
+    document.addEventListener("visibilitychange", (event) => {
+      if (document.visibilityState !== "visible") {
+        setShowSearch(false);
+        setHideSearch(true);
+        animation_out();
+      }
+    })
+  }, [])
+
+  useEffect(() => {
     window.addEventListener("click", function test(e) {
         if (showSearch && e.target.className !== 'search__bar__input') {
           setShowSearch(false);
@@ -56,7 +66,6 @@ function Nav() {
     for (var i=0;i<16;i++) {
       document.getElementById("search1").style.right = `${move}rem`;
       move = move - 1;
-      sleep(1000);
     }
   }
 
