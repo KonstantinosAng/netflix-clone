@@ -25,11 +25,11 @@ function Nav() {
         if (showSearch && e.target.className !== 'search__bar__input') {
           setShowSearch(false);
           setHideSearch(true);
-          document.getElementById("search__appear").style.animation = "fade_out 1.5s";
+          animation_out();
         } else if (!showSearch && e.target.id ==='search1') {
           setShowSearch(true);
           setHideSearch(false);
-          document.getElementById("search__appear").style.animation = "fade_in 1.5s";
+          animation_in();
         }
       }
     );
@@ -40,17 +40,42 @@ function Nav() {
     if (showSearch) {
       setShowSearch(false);
       setHideSearch(true);
-      document.getElementById("search__appear").style.animation = "fade_out 1.5s";
+      document.getElementById("search__field").style.animation = "fade_out 1.5s";
+      animation_out();
     } else {
       setShowSearch(true);
       setHideSearch(false);
-      document.getElementById("search__appear").style.animation = "fade_in 1.5s";
+      document.getElementById("search__field").style.animation = "fade_in 1.5s";
+      animation_in(); 
+    }
+  }
+
+  function animation_out() {
+    document.getElementById("search1").style.display = 'block';
+    var move = 36;
+    for (var i=0;i<16;i++) {
+      document.getElementById("search1").style.right = `${move}rem`;
+      move = move - 1;
+      sleep(1000);
+    }
+  }
+
+  function animation_in() {
+    document.getElementById("search1").style.display = 'block';
+    var move = 21;
+    for (var i=0;i<16;i++) {
+      document.getElementById("search1").style.right = `${move}rem`;
+      move = move + 1;
     }
   }
 
   const Reload = () => {
     window.location.reload();
   };
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
   return (
     <div className={`nav ${show && "nav__black"}`}>
