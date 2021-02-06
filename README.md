@@ -1,6 +1,6 @@
 # Netflix Clone
 
-A clone of Netflix's browser page using [React JS](https://reactjs.org) for the front-end and the [TMDB](https://www.themoviedb.org) API for the data. Inspired by [this tutorial](https://www.youtube.com/watch?v=XtMThy8QKqU)
+A clone of Netflix's browse page using [React JS](https://reactjs.org) for the front-end and the [TMDB](https://www.themoviedb.org) API for the data. Inspired by [this tutorial](https://www.youtube.com/watch?v=XtMThy8QKqU)
 
 ## Requirements
 
