@@ -25,9 +25,11 @@ function Nav() {
         if (showSearch && e.target.className !== 'search__bar__input') {
           setShowSearch(false);
           setHideSearch(true);
+          document.getElementById("search__appear").style.animation = "fade_out 1.5s";
         } else if (!showSearch && e.target.id ==='search1') {
           setShowSearch(true);
           setHideSearch(false);
+          document.getElementById("search__appear").style.animation = "fade_in 1.5s";
         }
       }
     );
@@ -38,9 +40,11 @@ function Nav() {
     if (showSearch) {
       setShowSearch(false);
       setHideSearch(true);
+      document.getElementById("search__appear").style.animation = "fade_out 1.5s";
     } else {
       setShowSearch(true);
       setHideSearch(false);
+      document.getElementById("search__appear").style.animation = "fade_in 1.5s";
     }
   }
 
@@ -67,7 +71,7 @@ function Nav() {
       <i className="fa fa-gift"></i>
       <h5 className="nav__children"> CHILDREN </h5>
       <i id="search1" className={`fa fa-search ${hideSearch && "search__barShow"}`} onClick={handleClick}></i>
-      <div className={`search__bar ${showSearch && "search__barShow"}`}>
+      <div id="search__appear" className={`search__bar ${showSearch && "search__barShow"}`}>
         <input ref={input => input && input.focus()} id="search__field" type="text" className="search__bar__input" placeholder="Titles, people, genres" />  
         <i id="search2" className={`fa fa-search second-search ${showSearch && "search__barShow"}`} onClick={handleClick}></i>
       </div>

@@ -1,3 +1,13 @@
+@keyframes fade_in { /* from 0 to full opacity */
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0);}
+}
+
+@keyframes fade_out { /* from 0 to full opacity */
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 .nav {
   position: fixed;
   top: 0;
