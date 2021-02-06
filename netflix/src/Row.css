@@ -35,29 +35,6 @@
   transform: scale(1.09);
 }
 
-.row__navigationLarge {
-  margin-top: 9rem!important;
-}
-
-.row__navigation {
-  align-items: center;
-  object-fit: contain;
-  text-align: center;
-  position: relative;
-  right: 150px;
-  top: 100px;
-  cursor: pointer;
-  transition: transform 400ms;
-  transform: scale(3);
-  width: 1.5rem;
-  height: 1.2rem;
-}
-
-.row__navigation:hover {
-  color: gray;
-  transform: scale(3.8);
-}
-
 .row__popup {
   display: flex;
   width: 100%;

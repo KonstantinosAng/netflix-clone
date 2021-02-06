@@ -14,7 +14,7 @@
 .nav__logo {
   cursor: pointer;
   position: fixed;
-  left: 1.25rem;
+  left: 2.5rem;
   width: 5rem;
   object-fit: contain;
 }
@@ -29,4 +29,22 @@
 
 .nav__black {
   background-color: #111;
+}
+
+.nav__row {
+  display: flex;
+  position: fixed;
+  left: 9.5rem;
+  color: white;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.nav__home, .nav__series, .nav__films, .nav__news, .nav__list {
+  margin-left: 1.25rem;
+  height: 1rem;
+}
+
+.nav__home:hover, .nav__series:hover, .nav__films:hover, .nav__news:hover, .nav__list:hover {
+  color: lightgray;
 }
