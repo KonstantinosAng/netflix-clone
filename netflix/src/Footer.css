@@ -1,5 +1,6 @@
 .footer {
   height: 20rem;
+  align-items: center;
 }
 
 .footer__social {
@@ -15,18 +16,46 @@
   font-size: 2rem;
 }
 
-.footer__row {
+.footer__col {
   display: flex;
-  margin: 1rem 7.9rem;
-  color: gray;
-  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-right: 3rem;
 }
 
-h5:hover {
+.footer__row {
+  display: flex;
+  margin: 1rem 11rem;
+  color: gray;
+  
+}
+
+.footer__col h5:hover {
   text-decoration: underline;
   text-decoration: gray;
 }
 
-.footer__row h5 {
-  margin: 0 3rem;
+.footer__col h5 {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+}
+
+.footer__button {
+  color: gray;
+  background-color: #111;
+  cursor: pointer;
+  border: 1px solid gray;
+  height: 2rem;
+}
+
+.footer__button:hover {
+  color: white;
+}
+
+.footer__row span {
+  font-size: .6875rem;
 }
