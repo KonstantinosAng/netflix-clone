@@ -1,6 +1,6 @@
 @keyframes fade_in { /* from 0 to full opacity */
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0);}
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fade_out { /* from 0 to full opacity */
