@@ -22,9 +22,10 @@
 .nav__avatar {
   cursor: pointer;
   position: fixed;
-  right: 1.25rem;
+  right: 4.5rem;
   object-fit: contain;
-  width: 1.875rem;
+  width: 2rem;
+  top: .95rem;
 }
 
 .nav__black {
@@ -35,6 +36,7 @@
   display: flex;
   position: fixed;
   left: 9.5rem;
+  top: 1.4rem;
   color: white;
   cursor: pointer;
   justify-content: space-between;
@@ -47,4 +49,52 @@
 
 .nav__home:hover, .nav__series:hover, .nav__films:hover, .nav__news:hover, .nav__list:hover {
   color: lightgray;
+}
+
+.fa-bell {
+  cursor: pointer;
+  position: fixed;
+  color: white;
+  object-fit: contain;
+  transform: scale(1.4);
+  right: 8rem;
+  top: 1.4rem;
+}
+
+.fa-gift {
+  cursor: pointer;
+  position: fixed;
+  color: white;
+  object-fit: contain;
+  transform: scale(1.8);
+  right: 11.5rem;
+  top: 1.4rem;
+}
+
+.nav__children {
+  cursor: pointer;
+  position: fixed;
+  color: white;
+  right: 14.8rem;
+  top: 1.4rem;
+}
+
+.fa-search {
+  cursor: pointer;
+  position: fixed;
+  color: white;
+  right: 21rem;
+  transform: scale(1.2);
+  top: 1.4rem;
+}
+
+.nav span {
+  cursor: pointer;
+  position: fixed;
+  color: white;
+  right: 2.8rem;
+  transform: scaleX(1);
+  transform: scaleY(.45);
+  top: 1.4rem;
+  width: 1rem;
 }

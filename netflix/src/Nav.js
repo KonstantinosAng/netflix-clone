@@ -37,11 +37,16 @@ function Nav() {
         <h5 className="nav__news"> News & Popular </h5>
         <h5 className="nav__list"> My List </h5>
       </div>
+      <i className="fa fa-bell"></i>
+      <i class="fa fa-gift"></i>
+      <h5 className="nav__children"> CHILDREN </h5>
+      <i class="fa fa-search"></i>
       <img 
       className="nav__avatar"
       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
       alt="Netflix User Avatar"
       />
+      <span>&#9660;</span>
     </div>
   )
 }
