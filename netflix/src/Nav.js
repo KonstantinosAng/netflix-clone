@@ -54,7 +54,7 @@ function Nav() {
       <h5 className="nav__children"> CHILDREN </h5>
       <i className={`fa fa-search ${hideSearch && "search__barShow"}`} onClick={handleClick}></i>
       <div className={`search__bar ${showSearch && "search__barShow"}`}>
-        <input type="text" className="search__bar__input" placeholder="Titles, people, genres" />  
+        <input ref={input => input && input.focus()} id="search__field" type="text" className="search__bar__input" placeholder="Titles, people, genres" />  
         <i className={`fa fa-search second-search ${showSearch && "search__barShow"}`} onClick={handleClick}></i>
       </div>
       <img 
