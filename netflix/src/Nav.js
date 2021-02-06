@@ -28,6 +28,9 @@ function Nav() {
         animation_out();
       }
     })
+    return () => {
+      document.removeEventListener("visibilitychange", useEffect);
+    };
   }, [])
 
   useEffect(() => {
@@ -43,7 +46,9 @@ function Nav() {
         }
       }
     );
-    window.removeEventListener("click", useEffect);
+    return () => {
+      window.removeEventListener("click", useEffect);
+    }
   }, [showSearch])
 
   function handleClick() {
