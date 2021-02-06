@@ -20,6 +20,7 @@
 }
 
 .nav__avatar {
+  cursor: pointer;
   position: fixed;
   right: 1.25rem;
   object-fit: contain;
