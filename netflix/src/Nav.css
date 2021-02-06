@@ -128,6 +128,12 @@
   margin-left: 2rem;
 }
 
+.search__bar__input:active,
+.search__bar__input:active,
+.search__bar__input:active {
+  border: 1px solid white;
+}
+
 .search__barShow {
   display: block!important;
 }
