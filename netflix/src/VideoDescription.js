@@ -2,7 +2,6 @@ import React from 'react'
 import './VideoDescription.css';
 
 function VideoDescription({ show, title, desc }) {
-  console.log(title, desc);
   return (
     <div className={`row__Popup ${show && "row__showPopup"}`}>
       <h1 className="popup__title"> { title } </h1>

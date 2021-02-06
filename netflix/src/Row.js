@@ -24,7 +24,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
     height: "390",
     width: "640",
     playerVars: {
-    // https://developers.google.com/youtube/player_parameters
     autoplay: 1,
     start: 1
     }
@@ -65,9 +64,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
           src={`${requests.baseUrl}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} 
           alt={movie.name} />
         ))}
-        {/* <div className={`row__navigation ${isLargeRow && "row__navigationLarge"}`}>
+        <div className={`row__navigation ${isLargeRow && "row__navigationLarge"}`}>
           {">"}
-        </div> */}
+        </div>
       </div>
       <div className="row__popup">
         {trailerUrl && <YouTube videoId={trailerUrl} opt={opts} onReady={handleVideo} className="youtubeVideo" />}

@@ -43,7 +43,7 @@
   align-items: center;
   object-fit: contain;
   text-align: center;
-  position: float;
+  position: relative;
   right: 150px;
   top: 100px;
   cursor: pointer;
