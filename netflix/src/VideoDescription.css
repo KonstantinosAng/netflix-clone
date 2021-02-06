@@ -1,0 +1,13 @@
+.row__showPopup {
+  display: block!important;
+}
+
+.row__Popup {
+  display: none;
+  margin-left: 1rem;
+}
+
+.popup__desc {
+  margin-top: 1rem;
+  margin-right: 4.5rem;
+}

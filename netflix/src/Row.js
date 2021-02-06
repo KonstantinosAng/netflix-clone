@@ -4,10 +4,12 @@ import requests from './requests';
 import "./Row.css";
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+import VideoDescription from './VideoDescription.js';
 
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
+  const [movie__, setMovie__] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -20,10 +22,12 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
   const opts = {
     height: "390",
-    width: "100%",
+    width: "640",
     playerVars: {
+    // https://developers.google.com/youtube/player_parameters
     autoplay: 1,
-    },
+    start: 1
+    }
   };
 
   const handleClick = (movie) => {
@@ -35,10 +39,19 @@ function Row({ title, fetchUrl, isLargeRow }) {
         url = url.substr(0, 4) + url.substr(5);
         url = url.substr(url.indexOf("=")+1);
         setTrailerUrl(url+'?showinfo=0&enablejsapi=1&origin=http://localhost:3000');
+        setMovie__(movie);
       })
       .catch(error => console.log(error));
     }
   };
+
+  function truncate_string(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  }
+
+  const handleVideo = () => {
+    document.getElementsByClassName("youtubeVideo").play();
+  }
 
   return (
     <div className="row">
@@ -56,7 +69,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
           {">"}
         </div>
       </div>
-      {trailerUrl && <YouTube videoId={trailerUrl} opt={opts} />}
+      <div className="row__popup">
+        {trailerUrl && <YouTube videoId={trailerUrl} opt={opts} onReady={handleVideo} className="youtubeVideo" />}
+        <VideoDescription show={trailerUrl} title={movie__?.title || movie__?.name || movie__?.original_name} desc={truncate_string(movie__?.overview, 400)}/>
+      </div>
     </div>
   )
 }

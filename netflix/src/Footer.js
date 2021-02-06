@@ -5,9 +5,9 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__social">
-        <i class="social fa fa-facebook-official" />
-        <i class="social fa fa-instagram" />
-        <i class="social fa fa-youtube-play" />
+        <i className="social fa fa-facebook-official" />
+        <i className="social fa fa-instagram" />
+        <i className="social fa fa-youtube-play" />
       </div>
       <div className="footer__row">
         <h5> Audio and Subtitles </h5>
