@@ -20,6 +20,20 @@ function Nav() {
     };
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("click", function test(e) {
+        if (showSearch && e.target.className !== 'search__bar__input') {
+          setShowSearch(false);
+          setHideSearch(true);
+        } else if (!showSearch && e.target.id ==='search1') {
+          setShowSearch(true);
+          setHideSearch(false);
+        }
+      }
+    );
+    window.removeEventListener("click", useEffect);
+  }, [showSearch])
+
   function handleClick() {
     if (showSearch) {
       setShowSearch(false);
@@ -52,10 +66,10 @@ function Nav() {
       <i className="fa fa-bell"></i>
       <i className="fa fa-gift"></i>
       <h5 className="nav__children"> CHILDREN </h5>
-      <i className={`fa fa-search ${hideSearch && "search__barShow"}`} onClick={handleClick}></i>
+      <i id="search1" className={`fa fa-search ${hideSearch && "search__barShow"}`} onClick={handleClick}></i>
       <div className={`search__bar ${showSearch && "search__barShow"}`}>
         <input ref={input => input && input.focus()} id="search__field" type="text" className="search__bar__input" placeholder="Titles, people, genres" />  
-        <i className={`fa fa-search second-search ${showSearch && "search__barShow"}`} onClick={handleClick}></i>
+        <i id="search2" className={`fa fa-search second-search ${showSearch && "search__barShow"}`} onClick={handleClick}></i>
       </div>
       <img 
       className="nav__avatar"
