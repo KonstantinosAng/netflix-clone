@@ -4,7 +4,8 @@ import './Nav.css';
 function Nav() {
 
   const [show, handleShow] = useState(false);
-  const [showSearch, setShowSearch] = useState(false)
+  const [showSearch, setShowSearch] = useState(false);
+  const [hideSearch, setHideSearch] = useState(true);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -22,8 +23,10 @@ function Nav() {
   function handleClick() {
     if (showSearch) {
       setShowSearch(false);
+      setHideSearch(true);
     } else {
       setShowSearch(true);
+      setHideSearch(false);
     }
   }
 
@@ -47,12 +50,12 @@ function Nav() {
         <h5 className="nav__list"> My List </h5>
       </div>
       <i className="fa fa-bell"></i>
-      <i class="fa fa-gift"></i>
+      <i className="fa fa-gift"></i>
       <h5 className="nav__children"> CHILDREN </h5>
-      <i class="fa fa-search" onClick={handleClick}></i>
+      <i className={`fa fa-search ${hideSearch && "search__barShow"}`} onClick={handleClick}></i>
       <div className={`search__bar ${showSearch && "search__barShow"}`}>
         <input type="text" className="search__bar__input" placeholder="Titles, people, genres" />  
-        <i class="fa fa-search" onClick={handleClick}></i>
+        <i className={`fa fa-search second-search ${showSearch && "search__barShow"}`} onClick={handleClick}></i>
       </div>
       <img 
       className="nav__avatar"
