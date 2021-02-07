@@ -50,11 +50,11 @@
   display: flex;
   flex-direction: column;
   margin: 0 1vw;
+  cursor: pointer;
 }
 
 .profile__avatar {
   object-fit: contain;
-  cursor: pointer;
   width: 10vw;
   top: .95rem;
   border-radius: 3%;
@@ -64,12 +64,4 @@
 .profile__avatar__name {
   color: gray;
   margin-top: 1vw;
-}
-
-.profile__avatar:hover {
-  border: 2px solid white;
-}
-
-.profile__avatar__name:hover {
-  color: white;
 }

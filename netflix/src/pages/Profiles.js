@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Profiles.css';
 
 function Profiles() {
@@ -9,9 +9,17 @@ function Profiles() {
     window.location.reload();
   };
 
-  function handleHover() {
-    document.getElementById(id)
+  function handleHoverOn(hoverId) {
+    document.getElementById(hoverId[1]).style.color = 'white';
+    document.getElementById(hoverId[0]).style.border = '2px solid white';
   }
+
+  function handleHoverOff(hoverId) {
+    document.getElementById(hoverId[1]).style.color = 'gray';
+    document.getElementById(hoverId[0]).style.border = 'none';
+  }
+
+  console.log(hoverId);
 
   return (
     <div className="profile">
@@ -25,50 +33,60 @@ function Profiles() {
       <div className="profile__col">
         <h1 className="profile__header"> Who's Watching? </h1>
         <div className="profile__row">
-          <div className="profile__user">
+          <div onMouseOut={() => handleHoverOff(["user1__avatar", "user1__name"])} onMouseOver={() => handleHoverOn(["user1__avatar", "user1__name"])} className="profile__user">
             <img
+              onMouseOut={() => handleHoverOff(["user1__avatar", "user1__name"])}
+              onMouseOver={() => handleHoverOn(["user1__avatar", "user1__name"])}
               id="user1__avatar"
               className="profile__avatar"
               src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
               alt="Netflix User Avatar"
               />
-              <h3 id="user1__name" className="profile__avatar__name"> User 1 </h3>
+              <h3 onMouseOut={() => handleHoverOff(["user1__avatar", "user1__name"])} onMouseOver={() => handleHoverOn(["user1__avatar", "user1__name"])} id="user1__name" className="profile__avatar__name"> User 1 </h3>
           </div>
-          <div className="profile__user">
+          <div onMouseOut={() => handleHoverOff(["user2__avatar", "user2__name"])} onMouseOver={() => handleHoverOn(["user2__avatar", "user2__name"])} className="profile__user">
             <img
+              onMouseOut={() => handleHoverOff(["user2__avatar", "user2__name"])}
+              onMouseOver={() => handleHoverOn(["user2__avatar", "user2__name"])}
               id="user2__avatar"
               className="profile__avatar"
               src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
               alt="Netflix User Avatar"
               />
-              <h3 id="user2__name" className="profile__avatar__name"> User 2 </h3>
+              <h3 onMouseOut={() => handleHoverOff(["user2__avatar", "user2__name"])} onMouseOver={() => handleHoverOn(["user2__avatar", "user2__name"])} id="user2__name" className="profile__avatar__name"> User 2 </h3>
           </div>
-          <div className="profile__user">
+          <div onMouseOut={() => handleHoverOff(["user3__avatar", "user3__name"])} onMouseOver={() => handleHoverOn(["user3__avatar", "user3__name"])} className="profile__user">
             <img
+              onMouseOut={() => handleHoverOff(["user3__avatar", "user3__name"])}
+              onMouseOver={() => handleHoverOn(["user3__avatar", "user3__name"])}
               id="user3__avatar"
               className="profile__avatar"
               src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
               alt="Netflix User Avatar"
               />
-              <h3 id="user3__name" className="profile__avatar__name"> User 3 </h3>
+              <h3 onMouseOut={() => handleHoverOff(["user3__avatar", "user3__name"])} onMouseOver={() => handleHoverOn(["user3__avatar", "user3__name"])} id="user3__name" className="profile__avatar__name"> User 3 </h3>
           </div>
-          <div className="profile__user">
+          <div onMouseOut={() => handleHoverOff(["user4__avatar", "user4__name"])} onMouseOver={() => handleHoverOn(["user4__avatar", "user4__name"])} className="profile__user">
             <img
+              onMouseOut={() => handleHoverOff(["user4__avatar", "user4__name"])}
+              onMouseOver={() => handleHoverOn(["user4__avatar", "user4__name"])}
               id="user4__avatar"
               className="profile__avatar"
               src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
               alt="Netflix User Avatar"
               />
-              <h3 id="user4__name" className="profile__avatar__name"> User 4 </h3>
+              <h3 onMouseOut={() => handleHoverOff(["user4__avatar", "user4__name"])} onMouseOver={() => handleHoverOn(["user4__avatar", "user4__name"])} id="user4__name" className="profile__avatar__name"> User 4 </h3>
           </div>
-          <div className="profile__user">
+          <div onMouseOut={() => handleHoverOff(["user5__avatar", "user5__name"])} onMouseOver={() => handleHoverOn(["user5__avatar", "user5__name"])} className="profile__user">
             <img
+              onMouseOut={() => handleHoverOff(["user5__avatar", "user5__name"])}
+              onMouseOver={() => handleHoverOn(["user5__avatar", "user5__name"])}
               id="user5__avatar"
               className="profile__avatar"
               src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
               alt="Netflix User Avatar"
               />
-              <h3 id="user5__name" className="profile__avatar__name"> Children </h3>
+              <h3 onMouseOut={() => handleHoverOff(["user5__avatar", "user5__name"])} onMouseOver={() => handleHoverOn(["user5__avatar", "user5__name"])} id="user5__name" className="profile__avatar__name"> Children </h3>
           </div>
         </div>
       </div>
