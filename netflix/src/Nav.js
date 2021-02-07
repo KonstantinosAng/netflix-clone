@@ -141,6 +141,7 @@ function Nav({ fetchUrl }) {
             <div className="bell__popup__posters__col">
               <h4 className="bell__popup__header"> New Arrival </h4>
               <h4 className="bell__popup__movieName"> {movie?.name || movie?.title || movie?.original_name} </h4>
+              <h4 className="bell__popup__movieDate"> { movie?.first_air_date || movie?.release_date } </h4>
             </div>
           </div>
           ))}

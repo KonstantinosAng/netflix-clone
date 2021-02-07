@@ -287,7 +287,7 @@
   margin-top: 1rem;
 }
 
-.bell__popup__movieName {
+.bell__popup__movieName, .bell__popup__movieDate {
   color: white;
 }
 
