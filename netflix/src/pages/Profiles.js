@@ -27,6 +27,10 @@ function Profiles() {
     document.getElementById("box__name").style.color = 'gray';
   }
 
+  function handleRedirect() {
+    console.log(window.location.pathname);
+  }
+
   return (
     <div className="profile">
       <div className="fade__top"></div>
@@ -39,7 +43,7 @@ function Profiles() {
       <div className="profile__col">
         <h1 className="profile__header"> Who's Watching? </h1>
         <div className="profile__row">
-          <div onMouseOut={() => handleHoverOff(["user1__avatar", "user1__name"])} onMouseOver={() => handleHoverOn(["user1__avatar", "user1__name"])} className="profile__user">
+          <div onClick={handleRedirect} onMouseOut={() => handleHoverOff(["user1__avatar", "user1__name"])} onMouseOver={() => handleHoverOn(["user1__avatar", "user1__name"])} className="profile__user">
             <img
               onMouseOut={() => handleHoverOff(["user1__avatar", "user1__name"])}
               onMouseOver={() => handleHoverOn(["user1__avatar", "user1__name"])}
