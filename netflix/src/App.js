@@ -8,7 +8,7 @@ import requests from './requests.js';
 function App() {
   return (
     <div className="app">
-      <Nav />
+      <Nav fetchUrl={requests.fetchTrending} />
       <Banner />
       <div className="rows">
         <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />

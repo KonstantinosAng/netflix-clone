@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import './Nav.css';
+import axios from 'axios';
+import requests from './requests.js';
 
-function Nav() {
+function Nav({ fetchUrl }) {
 
   const [show, handleShow] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [hideSearch, setHideSearch] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
+  const [movies, setMovies] = useState([]);
 
+  useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(fetchUrl);
+      setMovies(request.data.results.slice(0, 7));
+      return request;
+    }
+    fetchData();
+  }, [fetchUrl])
+  console.log(movies);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -51,12 +63,6 @@ function Nav() {
       window.removeEventListener("click", useEffect);
     }
   }, [showSearch])
-
-  useEffect(() => {
-    document.addEventListener("mousemove",(e) => {
-      console.log(e.target.className)
-    })
-  }, [showPopup])
 
   function handleClick() {
     if (showSearch) {
@@ -105,9 +111,7 @@ function Nav() {
   function handlePopupHide() {
     setShowPopup(false);
   }
-
-  console.log(showPopup);
-
+  console.log(movies);
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img 
@@ -124,6 +128,24 @@ function Nav() {
         <h5 className="nav__list"> My List </h5>
       </div>
       <i className="fa fa-bell"></i>
+      <div className={`bell__popup`}>
+        <span className="bell__popup__carret">&#9660;</span>
+        <div className="bell__popup__col">
+          {movies.map(movie => (
+          <div className="bell__popup__row">
+            <img
+            key={movie.id}
+            className="bell__popup__posters"
+            src={`${requests.baseUrl}${movie.backdrop_path}`} 
+            alt={movie.name} />
+            <div className="bell__popup__posters__col">
+              <h4 className="bell__popup__header"> New Arrival </h4>
+              <h4 className="bell__popup__movieName"> {movie?.name || movie?.title || movie?.original_name} </h4>
+            </div>
+          </div>
+          ))}
+        </div>
+      </div>
       <i className="fa fa-gift"></i>
       <h5 className="nav__children"> CHILDREN </h5>
       <i id="search1" className={`fa fa-search ${hideSearch && "search__barShow"}`} onClick={handleClick}></i>

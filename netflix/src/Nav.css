@@ -236,3 +236,63 @@
 .nav__avatar__popup__show {
   display: block;
 }
+
+.bell__popup {
+  position: fixed;
+  right: 7.9rem;
+  top: 3.85rem;
+  background-color: black;
+  width: 25.5rem;
+  height: 20rem;
+  opacity: .9;
+  border: 1px solid #383838;
+  overflow-y: scroll;
+}
+
+.bell__popup__carret {
+  color: white;
+  position: fixed;
+  right: 8.1rem;
+  transform: scaleY(.5) rotate(180deg);
+  top: 3rem;
+}
+
+.bell__popup__col {
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid lightgray;
+}
+
+.bell__popup__row {
+  display: flex;
+  border-bottom: 1px solid #383838;
+  cursor: pointer;
+}
+
+.bell__popup__posters__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.bell__popup__posters {
+  margin: 1rem 1rem 1rem 1rem;
+  object-fit: contain;
+  width: 7rem;
+  border: 1px solid;
+  border-radius: 5%;
+}
+
+.bell__popup__header {
+  color: white;
+  margin-top: 1rem;
+}
+
+.bell__popup__movieName {
+  color: white;
+}
+
+.bell__popup__posters__col:hover, 
+.bell__popup__header:hover,
+.bell__popup__movieName:hover {
+  opacity: 1;
+}
