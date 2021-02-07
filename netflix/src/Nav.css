@@ -238,7 +238,6 @@
 }
 
 .bell__popup {
-  background-color: black;
   display: none;
   position: fixed;
   right: 7.9rem;
@@ -247,7 +246,6 @@
   height: 20rem;
   border: 1px solid #383838;
   overflow-y: scroll;
-  opacity: .85;
 }
 
 .bell__popup__carret {
@@ -268,6 +266,12 @@
   display: flex;
   border-bottom: 1px solid #383838;
   cursor: pointer;
+  background-color: black;
+  opacity: .9;
+}
+
+.bell__popup__row:hover {
+  opacity: 1;
 }
 
 .bell__popup__posters__col {

@@ -107,6 +107,7 @@ function Nav({ fetchUrl }) {
 
   function handlePopupShow() {
     setShowPopup(true);
+    setShowBellPopup(false);
   }
 
   function handlePopupHide() {
@@ -114,6 +115,7 @@ function Nav({ fetchUrl }) {
   }
 
   function handleBellPopupShow() {
+    setShowPopup(false);
     setShowBellPopup(true);
   }
 
@@ -141,7 +143,7 @@ function Nav({ fetchUrl }) {
         <span className="bell__popup__carret">&#9660;</span>
         <div className="bell__popup__col">
           {movies.map(movie => (
-          <div id="bell__row__opacity" className="bell__popup__row">
+          <div id={movie.id} className="bell__popup__row">
             <img
             key={movie.id}
             className="bell__popup__posters"
