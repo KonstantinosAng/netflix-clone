@@ -51,6 +51,7 @@
   flex-direction: column;
   margin: 0 1vw;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .profile__avatar {
@@ -59,9 +60,27 @@
   top: .95rem;
   border-radius: 3%;
   margin-top: 1vw;
+  box-sizing: border-box;
 }
 
 .profile__avatar__name {
   color: gray;
   margin-top: 1vw;
+}
+
+.profiles__box {
+  text-align: center;
+  align-items: center;
+  margin: 5vw 0;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  width: 18.166rem;
+  height: 3.03rem;
+  display: flex;
+  cursor: pointer;
+}
+
+.profiles__box__name {
+  margin: auto auto;
+  color: gray;
 }

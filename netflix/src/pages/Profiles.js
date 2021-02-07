@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Profiles.css';
 
 function Profiles() {
-
-  const [hoverId, setHoverId] = useState([]);
 
   const Reload = () => {
     window.location.reload();
@@ -11,7 +9,7 @@ function Profiles() {
 
   function handleHoverOn(hoverId) {
     document.getElementById(hoverId[1]).style.color = 'white';
-    document.getElementById(hoverId[0]).style.border = '2px solid white';
+    document.getElementById(hoverId[0]).style.border = '3px solid white';
   }
 
   function handleHoverOff(hoverId) {
@@ -19,7 +17,15 @@ function Profiles() {
     document.getElementById(hoverId[0]).style.border = 'none';
   }
 
-  console.log(hoverId);
+  function handleHoverProfile() {
+    document.getElementById("box").style.border = '1px solid white';
+    document.getElementById("box__name").style.color = 'white';
+  }
+
+  function handleHoverProfileOver() {
+    document.getElementById("box").style.border = '1px solid gray';
+    document.getElementById("box__name").style.color = 'gray';
+  }
 
   return (
     <div className="profile">
@@ -88,6 +94,9 @@ function Profiles() {
               />
               <h3 onMouseOut={() => handleHoverOff(["user5__avatar", "user5__name"])} onMouseOver={() => handleHoverOn(["user5__avatar", "user5__name"])} id="user5__name" className="profile__avatar__name"> Children </h3>
           </div>
+        </div>
+        <div onMouseOut={handleHoverProfileOver} onMouseOver={handleHoverProfile} id="box" className="profiles__box">
+          <h3 onMouseOut={handleHoverProfileOver} onMouseOver={handleHoverProfile} id="box__name" className="profiles__box__name"> MANAGE PROFILES </h3>
         </div>
       </div>
     </div>
