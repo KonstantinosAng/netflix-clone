@@ -123,6 +123,10 @@ function Nav({ fetchUrl }) {
     setShowBellPopup(false);
   }
 
+  function handleRedirect() {
+    window.location.replace('/');
+  }
+
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img 
@@ -208,7 +212,7 @@ function Nav({ fetchUrl }) {
             <h5 className="nav__avatar__popup__username"> User 4 </h5>
           </div>
           <div className="nav__avatar__popup__row">
-            <h5 className="nav__avatar__popup__profiles"> Manage profiles </h5>
+            <h5 onClick={handleRedirect} className="nav__avatar__popup__profiles"> Manage profiles </h5>
           </div>
         </div>
       </div>
