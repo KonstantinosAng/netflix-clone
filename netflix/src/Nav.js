@@ -10,6 +10,7 @@ function Nav({ fetchUrl }) {
   const [hideSearch, setHideSearch] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
   const [movies, setMovies] = useState([]);
+  const [showBellPopup, setShowBellPopup] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -19,7 +20,7 @@ function Nav({ fetchUrl }) {
     }
     fetchData();
   }, [fetchUrl])
-  console.log(movies);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -111,7 +112,15 @@ function Nav({ fetchUrl }) {
   function handlePopupHide() {
     setShowPopup(false);
   }
-  console.log(movies);
+
+  function handleBellPopupShow() {
+    setShowBellPopup(true);
+  }
+
+  function handleBellPopupHide() {
+    setShowBellPopup(false);
+  }
+
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img 
@@ -127,12 +136,12 @@ function Nav({ fetchUrl }) {
         <h5 className="nav__news"> News & Popular </h5>
         <h5 className="nav__list"> My List </h5>
       </div>
-      <i className="fa fa-bell"></i>
-      <div className={`bell__popup`}>
+      <i onMouseOver={handleBellPopupShow} className="fa fa-bell"></i>
+      <div onMouseOver={handleBellPopupShow} onMouseOut={handleBellPopupHide} className={`bell__popup ${showBellPopup && "bell__popup__show"}`}>
         <span className="bell__popup__carret">&#9660;</span>
         <div className="bell__popup__col">
           {movies.map(movie => (
-          <div className="bell__popup__row">
+          <div id="bell__row__opacity" className="bell__popup__row">
             <img
             key={movie.id}
             className="bell__popup__posters"

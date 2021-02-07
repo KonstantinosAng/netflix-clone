@@ -238,15 +238,16 @@
 }
 
 .bell__popup {
+  background-color: black;
+  display: none;
   position: fixed;
   right: 7.9rem;
   top: 3.85rem;
-  background-color: black;
   width: 25.5rem;
   height: 20rem;
-  opacity: .9;
   border: 1px solid #383838;
   overflow-y: scroll;
+  opacity: .85;
 }
 
 .bell__popup__carret {
@@ -291,8 +292,6 @@
   color: white;
 }
 
-.bell__popup__posters__col:hover, 
-.bell__popup__header:hover,
-.bell__popup__movieName:hover {
-  opacity: 1;
+.bell__popup__show {
+  display: block;
 }
