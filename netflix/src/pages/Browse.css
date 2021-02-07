@@ -8,4 +8,5 @@
 
 .rows {
   margin-top: -8rem;
+  box-sizing: border-box;
 }

@@ -1,6 +1,8 @@
 .row {
   margin-left: 20px;
   color: white;
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .row__posters {
@@ -30,6 +32,7 @@
 
 .row__posterLarge {
   max-height: 25vw;
+  box-sizing: border-box;
 }
 
 .row__posterLarge:hover {
