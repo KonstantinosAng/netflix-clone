@@ -30,10 +30,10 @@
 }
 
 .nav__avatar {
-  cursor: pointer;
   position: fixed;
   right: 4.5rem;
   object-fit: contain;
+  cursor: pointer;
   width: 2rem;
   top: .95rem;
 }
@@ -99,7 +99,7 @@
   top: 1.4rem;
 }
 
-.nav span {
+.nav__avatar__carret {
   cursor: pointer;
   position: fixed;
   color: white;
@@ -158,4 +158,81 @@
 .second-search {
   position: fixed;
   right: 36rem;
+}
+
+.nav__avatar__popup {
+  display: none;
+  position: fixed;
+  right: 3rem;
+  top: 3.85rem;
+  background-color: black;
+  width: 12rem;
+  opacity: .9;
+  border: .5px solid #383838;
+  border-bottom: none;
+}
+
+.nav__avatar__popup__2 {
+  display: none;
+  position: fixed;
+  background-color: black;
+  right: 3rem;
+  top: 19rem;
+  width: 12rem;
+  opacity: .9;
+  border: .5px solid #383838;
+}
+
+.nav__avatar__popup__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__avatar__popup__carret {
+  color: white;
+  position: fixed;
+  right: 5rem;
+  transform: scaleY(.5) rotate(180deg);
+  top: 3rem;
+}
+
+.nav__avatar__popup__row {
+  display: flex;
+}
+
+.nav__avatar__popup__username {
+  color: white;
+  margin: 1.5rem 1rem 0 0;
+  cursor: pointer;
+}
+
+.nav__avatar__popup__user {
+  object-fit: contain;
+  cursor: pointer;
+  width: 2rem;
+  margin: 1rem 1rem 0rem 1rem;
+}
+
+.nav__avatar__popup__profiles {
+  color: white;
+  margin: 1rem 1rem 1rem 1rem;
+  cursor: pointer;
+}
+
+.nav__avatar__popup__2__profiles {
+  color: white;
+  margin: .5rem 1rem 0rem 1rem;
+  cursor: pointer;
+}
+
+.first__element {
+  margin-top: 1rem;
+}
+
+.last__element {
+  margin-bottom: 1rem;
+}
+
+.nav__avatar__popup__show {
+  display: block;
 }

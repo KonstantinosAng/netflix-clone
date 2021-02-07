@@ -6,6 +6,7 @@ function Nav() {
   const [show, handleShow] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [hideSearch, setHideSearch] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -51,6 +52,12 @@ function Nav() {
     }
   }, [showSearch])
 
+  useEffect(() => {
+    document.addEventListener("mousemove",(e) => {
+      console.log(e.target.className)
+    })
+  }, [showPopup])
+
   function handleClick() {
     if (showSearch) {
       setShowSearch(false);
@@ -91,6 +98,16 @@ function Nav() {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  function handlePopupShow() {
+    setShowPopup(true);
+  }
+
+  function handlePopupHide() {
+    setShowPopup(false);
+  }
+
+  console.log(showPopup);
+
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img 
@@ -114,12 +131,60 @@ function Nav() {
         <input ref={input => input && input.focus()} id="search__field" type="text" className="search__bar__input" placeholder="Titles, people, genres" />  
         <i id="search2" className={`fa fa-search second-search ${showSearch && "search__barShow"}`} onClick={handleClick}></i>
       </div>
-      <img 
+      <img
+      onMouseOver={handlePopupShow}
       className="nav__avatar"
       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
       alt="Netflix User Avatar"
       />
-      <span>&#9660;</span>
+      <span onMouseOver={handlePopupShow} className="nav__avatar__carret">&#9660;</span>
+      <div onMouseOver={handlePopupShow} onMouseOut={handlePopupHide} className={`nav__avatar__popup ${showPopup && "nav__avatar__popup__show"}`}>
+        <div onMouseOver={handlePopupShow} className="nav__avatar__popup__col">
+          <span className="nav__avatar__popup__carret">&#9660;</span>
+          <div className="nav__avatar__popup__row">
+            <img 
+              className="nav__avatar__popup__user"
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
+              alt="Netflix User Avatar"
+            />
+            <h5 className="nav__avatar__popup__username"> User 1 </h5>
+          </div>
+          <div className="nav__avatar__popup__row">
+            <img 
+              className="nav__avatar__popup__user"
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
+              alt="Netflix User Avatar"
+            />
+            <h5 className="nav__avatar__popup__username"> User 2 </h5>
+          </div>
+          <div className="nav__avatar__popup__row">
+            <img 
+              className="nav__avatar__popup__user"
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
+              alt="Netflix User Avatar"
+            />
+            <h5 className="nav__avatar__popup__username"> User 3 </h5>
+          </div>
+          <div className="nav__avatar__popup__row">
+            <img 
+              className="nav__avatar__popup__user"
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
+              alt="Netflix User Avatar"
+            />
+            <h5 className="nav__avatar__popup__username"> User 4 </h5>
+          </div>
+          <div className="nav__avatar__popup__row">
+            <h5 className="nav__avatar__popup__profiles"> Manage profiles </h5>
+          </div>
+        </div>
+      </div>
+      <div onMouseOver={handlePopupShow} className={`nav__avatar__popup__2 ${showPopup && "nav__avatar__popup__show"}`}>
+        <div onMouseOut={handlePopupHide} onMouseOver={handlePopupShow} className="nav__avatar__popup__col">
+          <h5 className="nav__avatar__popup__2__profiles first__element"> Account </h5>
+          <h5 className="nav__avatar__popup__2__profiles"> Help Centre </h5>
+          <h5 className="nav__avatar__popup__2__profiles last__element"> Sign out of Netflix </h5>
+        </div>
+      </div>
     </div>
   )
 }
