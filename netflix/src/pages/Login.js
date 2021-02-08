@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import './Login.css';
+import SignIn from './SignIn.js';
 
 function Login() {
 
-  const [showAlert, setShowAlert] = useState(false)
-
-  const Reload = () => {
-    window.location.reload();
-  };
+  const [showAlert, setShowAlert] = useState(false);
+  const [signIn, setSignIn] = useState(false);
 
   function handleRedirect() {
     const mail = document.getElementById('email');
@@ -24,7 +22,7 @@ function Login() {
       } else {
         setShowAlert(false);
         mail.style.borderBottom = 'none';
-        window.location.replace('');
+        setSignIn(true);
       }
     }
   }
@@ -41,27 +39,31 @@ function Login() {
       </div>
       <div className="login__fade__top"></div>
       <div className="login__body">
-        <div className="login__body__row">
-          <h1 className="login__body__header"> Unlimited Movies, TV shows, and more. </h1>
-        </div>
-        <div className="login__body__row">
-          <h2 className="login__body__row2"> Watch anywhere. Cancel anytime. </h2>
-        </div>
-        <div className="login__body__row">
-          <h3 className="login__body__row2 row3"> Ready to watch? Enter your email to create or restart your membership. </h3>
-        </div>
-        <div className="login__body__col">
-          <div className="row">
-            <input id="email" className="login__body__email" type="email" placeholder="Email address" required />
-            <button type="submit" onClick={handleRedirect} className="login__body__button"> TRY 30 DAYS FREE {`>`} </button>
-          </div>
-          <div className="row">
-            <div id="alert" className={`login__body__alert ${showAlert && "show__alert"}`} />
-          </div>
-        </div>
-        <div className="login__body__row">
-          <h3 className="login__body__row2 row3"> Only new members are eligible for this offer. </h3>
-        </div>
+        {signIn ? (<SignIn />) :
+        ( <>
+            <div className="login__body__row">
+              <h1 className="login__body__header"> Unlimited Movies, TV shows, and more. </h1>
+            </div>
+            <div className="login__body__row">
+              <h2 className="login__body__row2"> Watch anywhere. Cancel anytime. </h2>
+            </div>
+            <div className="login__body__row">
+              <h3 className="login__body__row2 row3"> Ready to watch? Enter your email to create or restart your membership. </h3>
+            </div>
+            <div className="login__body__col">
+              <div className="row">
+                <input id="email" className="login__body__email" type="email" placeholder="Email address" required />
+                <button type="submit" onClick={handleRedirect} className="login__body__button"> TRY 30 DAYS FREE {`>`} </button>
+              </div>
+              <div className="row">
+                <div id="alert" className={`login__body__alert ${showAlert && "show__alert"}`} />
+              </div>
+            </div>
+            <div className="login__body__row">
+              <h3 className="login__body__row2 row3"> Only new members are eligible for this offer. </h3>
+            </div>  
+          </>
+        )}
       </div>
     </div>
   )
