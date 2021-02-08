@@ -67,6 +67,12 @@
   margin-bottom: 1rem;
 }
 
+.login__body__col {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
 .login__body__header {
   z-index: 3;
   color: white;
@@ -96,12 +102,18 @@
   flex: stretch;
   width: 100%;
   flex-wrap: column;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .login__body__email[type='email'] {
   padding-left: .5rem;
-  color: gray;
+  color: black;
   font-weight: bold;
+}
+
+.login__body__email::placeholder {
+  color: gray;
 }
 
 .login__body__button {
@@ -112,4 +124,19 @@
   width: 70%;
   font-size: 1.5rem;
   flex-wrap: column;
+}
+
+.login__body__alert {
+  color: orange;
+  z-index: 1;
+  margin-top: .5rem;
+  display: none;
+}
+
+.show__alert {
+  display: block;
+}
+
+.row {
+  display: flex;
 }
