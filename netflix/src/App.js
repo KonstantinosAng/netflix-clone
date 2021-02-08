@@ -1,6 +1,6 @@
 import Browse from './pages/Browse.js';
 import Profiles from './pages/Profiles.js';
-import Login from './pages/Login.js';
+import Home from './pages/Home.js';
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="app">
       <Router>
-          {!user ? ( <Login /> ) : (
+          {!user ? ( <Home /> ) : (
           <Switch>
           <Route path='/' exact component={Browse}/>
           <Route path='/profiles' exact component={Profiles} />

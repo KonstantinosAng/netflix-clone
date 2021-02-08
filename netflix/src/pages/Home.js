@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import './Login.css';
+import './Home.css';
 import SignIn from './SignIn.js';
 
-function Login() {
+function Home() {
 
   const [showAlert, setShowAlert] = useState(false);
   const [signIn, setSignIn] = useState(false);
@@ -69,4 +69,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Home
