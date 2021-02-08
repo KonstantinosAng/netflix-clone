@@ -7,6 +7,10 @@ function Login() {
     window.location.reload();
   };
 
+  function handleRedirect() {
+    console.log(document.getElementById('email').value);
+  }
+
   return (
     <div className="login__root">
       <div className="login__banner">
@@ -29,8 +33,8 @@ function Login() {
           <h3 className="login__body__row2 row3"> Ready to watch? Enter your email to create or restart your membership. </h3>
         </div>
         <div className="login__body__row col">
-          <input className="login__body__email" type="email" placeholder="Email address" />
-          <button className="login__body__button"> TRY 30 DAYS FREE > </button>
+          <input id="email" className="login__body__email" type="email" placeholder="Email address" required />
+          <button onClick={handleRedirect} className="login__body__button"> TRY 30 DAYS FREE {`>`} </button>
         </div>
         <div className="login__body__row">
           <h3 className="login__body__row2 row3"> Only new members are eligible for this offer. </h3>

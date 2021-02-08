@@ -98,6 +98,12 @@
   flex-wrap: column;
 }
 
+.login__body__email[type='email'] {
+  padding-left: .5rem;
+  color: gray;
+  font-weight: bold;
+}
+
 .login__body__button {
   z-index: 3;
   color: white;
