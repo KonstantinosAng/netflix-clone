@@ -124,7 +124,7 @@ function Nav({ fetchUrl }) {
   }
 
   function handleRedirect() {
-    window.location.replace('/');
+    window.location.replace('/profiles');
   }
 
   return (

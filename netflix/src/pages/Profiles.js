@@ -1,6 +1,5 @@
 import React from 'react';
 import './Profiles.css';
-import {Redirect} from 'react-router-dom';
 
 function Profiles() {
 
