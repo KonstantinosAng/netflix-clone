@@ -13,8 +13,10 @@
 
 .login__fade__top {
   position: fixed;
-  height: 100vh;
-  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   z-index: 1;
   background: rgba(0, 0, 0, .4);
   background-image: linear-gradient(
@@ -49,4 +51,59 @@
 
 .login__button:focus {
   outline: none;
+}
+
+.login__body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 20vh;
+  max-width: 48rem;
+  text-align: center;
+}
+
+.login__body__row {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.login__body__header {
+  z-index: 3;
+  color: white;
+  margin: 0 auto;
+  max-width: 40rem;
+  font-size: 3.125rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login__body__row2 {
+  color: white;
+  margin: 0 auto;
+  z-index: 3;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.row3 {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.login__body__email {
+  z-index: 3;
+  margin: 0 auto;
+  height: 3.75rem;
+  flex: stretch;
+  width: 100%;
+  flex-wrap: column;
+}
+
+.login__body__button {
+  z-index: 3;
+  color: white;
+  background-color: #e50914;
+  flex: stretch;
+  width: 70%;
+  font-size: 1.5rem;
+  flex-wrap: column;
 }
