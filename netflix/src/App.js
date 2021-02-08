@@ -10,13 +10,11 @@ function App() {
   return (
     <div className="app">
       <Router>
-          {!user ? ( <Home /> ) : (
-          <Switch>
-          <Route path='/' exact component={Browse}/>
+        <Switch>
+          <Route path='/' exact component={!user ? Home : Browse}/>
           <Route path='/profiles' exact component={Profiles} />
           <Route path='/browse' exact component={Browse} />
-          </Switch>
-        )}
+        </Switch>
       </Router>
     </div>
   );
