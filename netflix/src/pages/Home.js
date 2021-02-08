@@ -26,7 +26,7 @@ function Home() {
       }
     }
   }
-
+  
   return (
     <div className="login__root">
       <div className="login__banner">

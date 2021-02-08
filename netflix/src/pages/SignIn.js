@@ -6,7 +6,7 @@ function SignIn() {
   const [showAlert, setShowAlert] = useState(false);
   const [user, setUser] = useState(false);
 
-  function handleRedirect(event) {
+  function handleSignIn(event) {
     event.preventDefault();
     const mail = document.getElementById('email');
     if (mail.value === '') {
@@ -27,6 +27,10 @@ function SignIn() {
     }
   }
 
+  function handleRegister(event) {
+    event.preventDefault();
+  }
+
   return (
     <div className="signIn__root">
       <h1 className="signIn__header"> Sign In </h1>
@@ -34,10 +38,10 @@ function SignIn() {
         <input id="email" type="mail" className="signIn__input__mail" placeholder="Email" />
         <div id="alert" className={`alertSignIn login__body__alert ${showAlert && "show__alert"}`} />
         <input type="password" className="signIn__input__password" placeholder="Password" />
-        <button onClick={handleRedirect} type="submit" className="signIn__button"> Sign In </button>
+        <button onClick={handleSignIn} type="submit" className="signIn__button"> Sign In </button>
         <h4 className="signIn__signUp"> 
           <span className="signIn__span__gray"> New to Netflix? </span>
-          <span className="signIn__span__white"> SignUp now. </span>
+          <span onClick={handleRegister} className="signIn__span__white"> Sign up now. </span>
         </h4>
       </form>
     </div>
