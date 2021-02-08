@@ -5,7 +5,7 @@ function SignIn() {
   return (
     <div className="signIn__root">
       <form>
-        <h1> Sign In </h1>
+        <h1 className="signIn__header"> Sign In </h1>
         <input placeholder="Email" />
       </form>
     </div>
