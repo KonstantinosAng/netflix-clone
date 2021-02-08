@@ -35,7 +35,7 @@ function Login() {
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="Netflix Logo"
         />
-        <button className="login__button"> <h3> Sign In </h3> </button>
+        <button onClick={() => setSignIn(true)} className="login__button"> <h3> Sign In </h3> </button>
       </div>
       <div className="login__fade__top"></div>
       <div className="login__body">
