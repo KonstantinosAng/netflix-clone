@@ -125,6 +125,8 @@
   font-size: 1.5rem;
   flex-wrap: column;
   cursor: pointer;
+  box-sizing: border-box;
+  border: none;
 }
 
 .login__body__alert {
