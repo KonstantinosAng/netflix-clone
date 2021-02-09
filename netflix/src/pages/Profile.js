@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './Profile.css';
-import { useDispatch } from 'react-redux';
-import { logout } from '../extras/userSlice.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../extras/userSlice.js';
 
 function Profile() {
 
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const [activePlan, setActivePlan] = useState('premium');
-
+  
   function handleRedirectBrowse() {
     window.location.replace('/');
   }
@@ -54,7 +55,7 @@ function Profile() {
             alt="Netflix User Avatar"
           />
           <div className="profile__body__col">
-            <input type="mail" className="profile__body__input" placeholder="Email" />
+            <input type="mail" className="profile__body__input" placeholder="Email" value={user['email']} />
             <h3 className="profile__body__input__plans"> Plans (Current Plan: premium) </h3>
           </div>
         </div>

@@ -15,6 +15,7 @@
   width: 10vw;
   object-fit: contain;
   margin: 2vw 2vw;
+  cursor: pointer;
 }
 
 .profile__avatar__nav {  
