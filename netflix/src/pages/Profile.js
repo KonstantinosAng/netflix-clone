@@ -54,7 +54,7 @@ function Profile() {
             alt="Netflix User Avatar"
           />
           <div className="profile__body__col">
-            <input type="mail" className="profile__body__input" placholder="Email" />
+            <input type="mail" className="profile__body__input" placeholder="Email" />
             <h3 className="profile__body__input__plans"> Plans (Current Plan: premium) </h3>
           </div>
         </div>
