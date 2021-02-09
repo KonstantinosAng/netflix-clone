@@ -40,7 +40,7 @@ function Profile() {
           alt="Netflix Logo"
         />
         <img
-          className="profile__avatar"
+          className="profile__avatar__nav"
           src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F666011864883662849%2FgQwK8LLw.jpg&f=1&nofb=1"
           alt="Netflix User Avatar"
         />

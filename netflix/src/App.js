@@ -33,7 +33,7 @@ function App() {
       <Router>
         <Switch>
           <Route path='/' exact component={!user ? Home : Browse}/>
-          <Route path='/profiles' exact component={Profiles} />
+          <Route path='/profiles' exact component={!user ? Home : Profiles} />
           <Route path='/profile' exact component={!user ? Home : Profile} />
           <Route path='/browse' exact component={!user ? Home : Browse} />
         </Switch>
