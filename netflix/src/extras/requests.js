@@ -1,4 +1,4 @@
-const TMDB_API_KEY="b12c4ce548390f09a78b7fc6df9b191f";
+const TMDB_API_KEY=process.env.TMDB_API_KEY;
 
 const requests = {
   baseUrl: `https://image.tmdb.org/t/p/original/`,

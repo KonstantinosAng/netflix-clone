@@ -51,7 +51,7 @@ function Home() {
               <h3 className="login__body__row2 row3"> Ready to watch? Enter your email to create or restart your membership. </h3>
             </div>
             <div className="login__body__col">
-              <div className="row">
+              <div className="alert__row">
                 <input id="email" className="login__body__email" type="email" placeholder="Email address" required />
                 <button type="submit" onClick={handleRedirect} className="login__body__button"> TRY 30 DAYS FREE {`>`} </button>
               </div>
