@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Nav.css';
 import axios from 'axios';
 import requests from '../extras/requests.js';
+import { useDispatch } from 'react-redux';
+import { logout } from '../extras/userSlice.js';
 
 function Nav({ fetchUrl }) {
 
@@ -11,6 +13,7 @@ function Nav({ fetchUrl }) {
   const [showPopup, setShowPopup] = useState(false);
   const [movies, setMovies] = useState([]);
   const [showBellPopup, setShowBellPopup] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -224,7 +227,7 @@ function Nav({ fetchUrl }) {
         <div onMouseOut={handlePopupHide} onMouseOver={handlePopupShow} className="nav__avatar__popup__col">
           <h5 onClick={handleRedirectProfilePage} className="nav__avatar__popup__2__profiles first__element"> Account </h5>
           <h5 className="nav__avatar__popup__2__profiles"> Help Centre </h5>
-          <h5 className="nav__avatar__popup__2__profiles last__element"> Sign out of Netflix </h5>
+          <h5 onClick={() => dispatch(logout)} className="nav__avatar__popup__2__profiles last__element"> Sign out of Netflix </h5>
         </div>
       </div>
     </div>
