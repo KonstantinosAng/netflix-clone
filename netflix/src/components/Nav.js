@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Nav.css';
 import axios from 'axios';
-import requests from './requests.js';
+import requests from '../extras/requests.js';
 
 function Nav({ fetchUrl }) {
 

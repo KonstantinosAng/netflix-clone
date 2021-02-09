@@ -3,7 +3,7 @@ import Row from '../components/Row.js';
 import Banner from '../components/Banner.js';
 import Nav from '../components/Nav.js';
 import Footer from '../components/Footer.js';
-import requests from '../components/requests.js';
+import requests from '../extras/requests.js';
 
 function Browse() {
   return (

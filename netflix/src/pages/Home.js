@@ -55,7 +55,7 @@ function Home() {
                 <input id="email" className="login__body__email" type="email" placeholder="Email address" required />
                 <button type="submit" onClick={handleRedirect} className="login__body__button"> TRY 30 DAYS FREE {`>`} </button>
               </div>
-              <div className="row">
+              <div className="alert__row">
                 <div id="alert" className={`login__body__alert ${showAlert && "show__alert"}`} />
               </div>
             </div>

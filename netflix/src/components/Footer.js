@@ -2,12 +2,17 @@ import React from 'react'
 import './Footer.css';
 
 function Footer() {
+
+  function redirect__social(link) {
+    window.open(link, '_blank');
+  }
+
   return (
     <div className="footer">
       <div className="footer__social">
-        <i className="social fa fa-facebook-official" />
-        <i className="social fa fa-instagram" />
-        <i className="social fa fa-youtube-play" />
+        <i onClick={() => redirect__social("https://www.facebook.com/NetflixGR/")} className="social fa fa-facebook-official" />
+        <i onClick={() => redirect__social("https://www.instagram.com/Netflix/")} className="social fa fa-instagram" />
+        <i onClick={() => redirect__social("https://www.youtube.com/channel/UCNG0bMYut0wL3C9BS5ffQXw")} className="social fa fa-youtube-play" />
       </div>
       <div className="footer__row">
         <div className="footer__col">

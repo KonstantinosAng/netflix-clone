@@ -140,6 +140,6 @@
   display: block;
 }
 
-.row {
+.alert__row {
   display: flex;
 }
