@@ -86,3 +86,8 @@
 .signIn__span__gray {
   color: gray;
 }
+
+.alert__error {
+  margin-top: .5rem;
+  text-align: center;
+}

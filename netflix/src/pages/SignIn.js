@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState , useRef} from 'react'
+import { auth } from '../extras/firebase.js';
 import './SignIn.css';
 
 function SignIn() {
 
   const [showAlert, setShowAlert] = useState(false);
-  const [user, setUser] = useState(false);
+
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
 
   function handleSignIn(event) {
     event.preventDefault();
@@ -22,23 +25,41 @@ function SignIn() {
       } else {
         setShowAlert(false);
         mail.style.borderBottom = 'none';
-        setUser(true);
+        auth.signInWithEmailAndPassword(
+          emailRef.current.value,
+          passwordRef.current.value
+        ).then((res) => {
+          console.log(res);
+        }).catch((error) => {
+          document.getElementById('alert__error').innerHTML = error.message;
+          setShowAlert(true);
+        });
       }
     }
   }
 
   function handleRegister(event) {
     event.preventDefault();
+
+    auth.createUserWithEmailAndPassword(
+      emailRef.current.value,
+      passwordRef.current.value
+    ).then((user) => {
+      console.log(user);
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
   return (
     <div className="signIn__root">
       <h1 className="signIn__header"> Sign In </h1>
       <form>
-        <input id="email" type="mail" className="signIn__input__mail" placeholder="Email" />
+        <input ref={emailRef} id="email" type="mail" className="signIn__input__mail" placeholder="Email" />
         <div id="alert" className={`alertSignIn login__body__alert ${showAlert && "show__alert"}`} />
-        <input type="password" className="signIn__input__password" placeholder="Password" />
+        <input ref={passwordRef} type="password" className="signIn__input__password" placeholder="Password" />
         <button onClick={handleSignIn} type="submit" className="signIn__button"> Sign In </button>
+        <div id="alert__error" className={`alertSignIn alert__error login__body__alert ${showAlert && "show__alert"}`} />
         <h4 className="signIn__signUp"> 
           <span className="signIn__span__gray"> New to Netflix? </span>
           <span onClick={handleRegister} className="signIn__span__white"> Sign up now. </span>
