@@ -1,6 +1,9 @@
 .profile__root {
   background-color: #111;
   height: 100%;
+  width: 100vw;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .profile__row__banner {
@@ -14,13 +17,12 @@
   margin: 2vw 2vw;
 }
 
-.profile__avatar {
-  position: fixed;
-  right: 4.5rem;
+.profile__avatar {  
   object-fit: contain;
   cursor: pointer;
   width: 2rem;
   top: .95rem;
+  margin: 2vw 2vw;
 }
 
 .profile__body {
@@ -29,6 +31,8 @@
   margin: 0 auto;
   margin-top: 2vh;
   max-width: 40vw;
+  object-fit: contain;
+  height: 100%;
 }
 
 .profile__body__header {
@@ -132,4 +136,5 @@
 .signout__button {
   width: 100%;
   margin-top: 1rem;
+  margin-bottom: 3rem;
 }
