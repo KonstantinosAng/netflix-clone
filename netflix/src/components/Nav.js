@@ -127,6 +127,10 @@ function Nav({ fetchUrl }) {
     window.location.replace('/profiles');
   }
 
+  function handleRedirectProfilePage() {
+    window.location.replace('/profile');
+  }
+
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img 
@@ -218,7 +222,7 @@ function Nav({ fetchUrl }) {
       </div>
       <div onMouseOver={handlePopupShow} className={`nav__avatar__popup__2 ${showPopup && "nav__avatar__popup__show"}`}>
         <div onMouseOut={handlePopupHide} onMouseOver={handlePopupShow} className="nav__avatar__popup__col">
-          <h5 className="nav__avatar__popup__2__profiles first__element"> Account </h5>
+          <h5 onClick={handleRedirectProfilePage} className="nav__avatar__popup__2__profiles first__element"> Account </h5>
           <h5 className="nav__avatar__popup__2__profiles"> Help Centre </h5>
           <h5 className="nav__avatar__popup__2__profiles last__element"> Sign out of Netflix </h5>
         </div>
