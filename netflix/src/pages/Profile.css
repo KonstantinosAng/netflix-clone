@@ -133,8 +133,16 @@
   height: 2.5rem;
 }
 
+.profile__body__button:focus {
+  outline: none;
+}
+
 .signout__button {
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 3rem;
 }
+
+.signout__button:focus {
+  outline: none;
+} 

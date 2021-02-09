@@ -1,11 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Profile.css';
+import { useDispatch } from 'react-redux';
+import { logout } from '../extras/userSlice.js';
 
 function Profile() {
+
+  const dispatch = useDispatch();
+  const [activePlan, setActivePlan] = useState('premium');
 
   function handleRedirectBrowse() {
     window.location.replace('/');
   }
+
+  useEffect(() => {
+    function handlePlans() {
+      const plans = {1: 'basic', 2: 'standard', 3: 'premium'};
+      for (const plan in plans) {
+        if (plans[plan] === activePlan) {
+          document.getElementById(plans[plan]).style.backgroundColor = 'gray';
+          document.getElementById(plans[plan]).innerHTML = 'Current Package';
+          document.getElementById(plans[plan]).style.width = '11rem';
+        } else {
+          document.getElementById(plans[plan]).style.backgroundColor = '#e50914';
+          document.getElementById(plans[plan]).innerHTML = 'Subscribe';
+          document.getElementById(plans[plan]).style.width = '9rem';
+        }
+      }
+    }
+    handlePlans();
+  }, [activePlan])
 
   return (
     <div className="profile__root">
@@ -43,24 +66,24 @@ function Profile() {
             <h4 className="profile__body__plan"> Netflix Standard </h4>
             <h6 className="profile__body__resolution"> 1080p </h6>
           </div>
-          <button className="profile__body__button"> Subscribe </button>
+          <button id="standard" onClick={() => setActivePlan('standard')} className="profile__body__button"> Subscribe </button>
         </div>
         <div className="profile__body__row__plans">
           <div className="profile__body__row__col">
             <h4 className="profile__body__plan"> Netflix Basic </h4>
             <h6 className="profile__body__resolution"> 480p </h6>
           </div>
-          <button className="profile__body__button"> Subscribe </button>
+          <button id="basic" onClick={() => setActivePlan('basic')} className="profile__body__button"> Subscribe </button>
         </div>
         <div className="profile__body__row__plans">
           <div className="profile__body__row__col">
             <h4 className="profile__body__plan"> Netflix Premium </h4>
             <h6 className="profile__body__resolution"> 4K+HDR </h6>
           </div>
-          <button className="profile__body__button"> Subscribe </button>
+          <button id="premium" onClick={() => setActivePlan('premium')} className="profile__body__button"> Subscribe </button>
         </div>
         <div className="profile__body__row">
-          <button className="profile__body__button signout__button"> Sign Out </button>
+          <button onClick={() => dispatch(logout)} className="profile__body__button signout__button"> Sign Out </button>
         </div>
       </div>
     </div>
