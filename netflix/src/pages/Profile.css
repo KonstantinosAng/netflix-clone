@@ -1,6 +1,6 @@
 .profile__root {
   background-color: #111;
-  height: 100vh;
+  height: 100%;
 }
 
 .profile__row__banner {
@@ -21,4 +21,115 @@
   cursor: pointer;
   width: 2rem;
   top: .95rem;
+}
+
+.profile__body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 2vh;
+  max-width: 40vw;
+}
+
+.profile__body__header {
+  color: white;
+  border-bottom: 2px solid rgb(30, 30, 30, .9);
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.profile__body__row {
+  display: flex;
+}
+
+.profile__body__row__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile__body__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 2px solid rgb(30, 30, 30, .9);
+}
+
+.profile__body__avatar {
+  object-fit: contain;
+  width: 5rem;
+  margin-right: 1rem;
+}
+
+.profile__body__input {
+  box-sizing: border-box;
+  border: none;
+  height: 2rem;
+  background-color: gray;
+  caret-color: white;
+  border-radius: 2px;
+}
+
+.profile__body__input[type="mail"] {
+  padding-left: 1rem;
+  color: white;
+}
+
+.profile__body__input::placeholder {
+  color: white;
+}
+
+.profile__body__input:focus {
+  outline: none;
+}
+
+.profile__body__input__plans {
+  margin-bottom: .5rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.profile__body__row__plans {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 1rem;
+}
+
+.profile__body__date {
+  margin-top: 1rem;
+  color: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.profile__body__plan {
+  color: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.profile__body__resolution {
+  color: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.profile__body__button {
+  background-color: #e50914;
+  color: white;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 9rem;
+  height: 2.5rem;
+}
+
+.signout__button {
+  width: 100%;
+  margin-top: 1rem;
 }
