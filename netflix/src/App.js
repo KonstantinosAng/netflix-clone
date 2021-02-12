@@ -2,6 +2,7 @@ import Browse from './pages/Browse.js';
 import Profiles from './pages/Profiles.js';
 import Home from './pages/Home.js';
 import Profile from './pages/Profile.js';
+import LoadingPage from './pages/LoadingPage.js';
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { auth } from './extras/firebase.js';
@@ -36,6 +37,7 @@ function App() {
           <Route path='/profiles' exact component={!user ? Home : Profiles} />
           <Route path='/profile' exact component={!user ? Home : Profile} />
           <Route path='/browse' exact component={!user ? Home : Browse} />
+          <Route path='/loading' exact component={!user ? Home : LoadingPage} />
         </Switch>
       </Router>
     </div>
