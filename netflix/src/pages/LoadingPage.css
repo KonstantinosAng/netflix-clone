@@ -5,23 +5,45 @@
 }
 
 .loading__root {
+  display: flex;
   width: 100%;
   height: 100vh;
-  display: flex;
   background-color: rgba(0, 0, 0, 1);
+  align-items: center;
+  justify-content: center;
 }
 
 .loading__logo {
-  position: relative;
-  top: 50%;
+  position: absolute;
   margin: 0 auto;
   width: 5rem;
   height: 5rem;
   background-color: rgba(0, 0, 0, 1);
-  border: 5px solid  rgba(229, 9, 20, 1);
-  border-right-color: rgba(0, 0, 0, 1);
-  border-top-color: rgba(0, 0, 0, 1);
+  background: linear-gradient(to top, transparent, rgba(229, 9, 20, .7));
   border-radius: 50%;
   animation-fill-mode: backwards;
   animation: spin 1s linear infinite;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading__span {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 50%;
+  border-top-radius: 500%;
+}
+
+.loading__span2 {
+  position: absolute;
+  top: 3.5rem;
+  right: 0rem;
+  width: 3rem;
+  height: 2rem;
+  background-color: rgba(0, 0, 0, 1);
+  border-right-radius: 50%;
 }
