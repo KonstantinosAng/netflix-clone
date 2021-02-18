@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import './Profile.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { logout, selectUser } from '../extras/userSlice.js';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../extras/userSlice.js';
+import { auth } from '../extras/firebase.js';
 
 function Profile() {
 
   const user = useSelector(selectUser);
-  const dispatch = useDispatch();
   const [activePlan, setActivePlan] = useState('premium');
   
   function handleRedirectBrowse() {
+    window.location.replace('/');
+  }
+
+  function handleSignOut() {
+    auth.signOut();
     window.location.replace('/');
   }
 
@@ -84,7 +89,7 @@ function Profile() {
           <button id="premium" onClick={() => setActivePlan('premium')} className="profile__body__button"> Subscribe </button>
         </div>
         <div className="profile__body__row">
-          <button onClick={() => dispatch(logout)} className="profile__body__button signout__button"> Sign Out </button>
+          <button onClick={handleSignOut} className="profile__body__button signout__button"> Sign Out </button>
         </div>
       </div>
     </div>
