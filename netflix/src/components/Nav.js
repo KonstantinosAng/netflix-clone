@@ -14,6 +14,7 @@ function Nav({ fetchUrl }) {
   const [showPopup, setShowPopup] = useState(false);
   const [movies, setMovies] = useState([]);
   const [showBellPopup, setShowBellPopup] = useState(false);
+  const [showNavListPopup, setShowNavListPopup] = useState(false);
   const dispatch = useDispatch();
 
   useSWR(fetchUrl, (url) => axios.get(url).then((respond) => setMovies(respond.data.results.slice(0, 7))));
@@ -128,6 +129,24 @@ function Nav({ fetchUrl }) {
     window.location.replace('/profile');
   }
 
+  function handleNavPopupShow() {
+    setShowNavListPopup(true);
+    for (const element of document.getElementsByClassName("nav__popup__list")[0].children) {
+      if (element.className !== 'nav__popup__carret') {
+        element.style.display = 'block';
+      }
+    }
+  }
+
+  function handleNavPopupHide() {
+    setShowNavListPopup(false);
+    for (const element of document.getElementsByClassName("nav__popup__list")[0].children) {
+      if (element.className !== 'nav__popup__carret') {
+        element.style.display = 'none';
+      }
+    }
+  }
+
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img 
@@ -138,10 +157,17 @@ function Nav({ fetchUrl }) {
       />
       <div className="nav__row">
         <h5 className="nav__home"> Home </h5>
-        <h5 className="nav__series"> Series </h5>
-        <h5 className="nav__films"> Films </h5>
-        <h5 className="nav__news"> News & Popular </h5>
-        <h5 className="nav__list"> My List </h5>
+        <h5 className="nav__series nav__popup__hide"> Series </h5>
+        <h5 className="nav__films nav__popup__hide"> Films </h5>
+        <h5 className="nav__news nav__popup__hide"> News & Popular </h5>
+        <h5 className="nav__list nav__popup__hide"> My List </h5>
+        <span onMouseOver={handleNavPopupShow} className="nav__popup__carret">&#9660;</span>
+        <div onMouseOver={handleNavPopupShow} onMouseOut={handleNavPopupHide} className="nav__popup__list">
+          <h5 className={`nav__series ${showNavListPopup && "nav__popup__show"}`}> Series </h5>
+          <h5 className={`nav__films ${showNavListPopup && "nav__popup__show"}`}> Films </h5>
+          <h5 className={`nav__news ${showNavListPopup && "nav__popup__show"}`}> News & Popular </h5>
+          <h5 className={`nav__list ${showNavListPopup && "nav__popup__show"}`}> My List </h5>
+        </div>
       </div>
       <i onMouseOver={handleBellPopupShow} className="fa fa-bell"></i>
       <div onMouseOver={handleBellPopupShow} onMouseOut={handleBellPopupHide} className={`bell__popup ${showBellPopup && "bell__popup__show"}`}>

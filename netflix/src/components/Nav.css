@@ -48,17 +48,43 @@
   left: 9.5rem;
   top: 1.4rem;
   color: white;
-  cursor: pointer;
   justify-content: space-between;
 }
 
 .nav__home, .nav__series, .nav__films, .nav__news, .nav__list {
   margin-left: 1.25rem;
   height: 1rem;
+  cursor: pointer;
 }
 
 .nav__home:hover, .nav__series:hover, .nav__films:hover, .nav__news:hover, .nav__list:hover {
   color: lightgray;
+}
+
+.nav__popup__list {
+  position: fixed;
+  top: 3rem;
+}
+
+.nav__popup__show {
+  display: block;
+}
+
+.nav__popup__list > h5 {
+  display: none;
+  margin-bottom: .5rem;
+}
+
+.nav__popup__carret {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  color: white;
+  left: 13.5rem;
+  transform: scaleX(1);
+  transform: scaleY(.45);
+  top: 1.4rem;
+  width: 1rem;
 }
 
 .fa-bell {
@@ -299,3 +325,12 @@
 .bell__popup__show {
   display: block;
 }
+
+@media (max-width: 1080px) {
+  .nav__popup__carret {
+    display: block;
+  }
+  .nav__popup__hide {
+    display: none;
+  }
+ }
