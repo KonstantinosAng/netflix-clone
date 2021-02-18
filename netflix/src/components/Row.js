@@ -5,12 +5,14 @@ import "./Row.css";
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 import VideoDescription from './VideoDescription.js';
+// import useSWR from 'swr';
 
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
   const [movie__, setMovie__] = useState([]);
 
+  // useSWR(fetchUrl, (url) => axios.get(url).then((respond) => setMovies(respond.data.results)));
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
@@ -56,13 +58,13 @@ function Row({ title, fetchUrl, isLargeRow }) {
     <div className="row">
       <h2>{title}</h2>
       <div className="row__posters">
-        {movies.map(movie => (
+        {movies?.map(movie => (
           <img
-          key={movie.id}
+          key={movie?.id}
           onClick={() => handleClick(movie)}
           className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-          src={`${requests.baseUrl}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} 
-          alt={movie.name} />
+          src={`${requests.baseUrl}${isLargeRow ? movie?.poster_path : movie?.backdrop_path}`} 
+          alt={movie?.name} />
         ))}
       </div>
       <div className="row__popup">
