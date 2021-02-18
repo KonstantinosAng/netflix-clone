@@ -4,6 +4,7 @@ import axios from 'axios';
 import requests from '../extras/requests.js';
 import { useDispatch } from 'react-redux';
 import { logout } from '../extras/userSlice.js';
+import useSWR from 'swr';
 
 function Nav({ fetchUrl }) {
 
@@ -15,14 +16,7 @@ function Nav({ fetchUrl }) {
   const [showBellPopup, setShowBellPopup] = useState(false);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(fetchUrl);
-      setMovies(request.data.results.slice(0, 7));
-      return request;
-    }
-    fetchData();
-  }, [fetchUrl])
+  useSWR(fetchUrl, (url) => axios.get(url).then((respond) => setMovies(respond.data.results.slice(0, 7))))
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
