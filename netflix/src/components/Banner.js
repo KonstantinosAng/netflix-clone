@@ -2,19 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './Banner.css';
 import axios from 'axios';
 import requests from '../extras/requests.js';
+import useSWR from 'swr';
 
 function Banner() {
   
   const [movie, setMovie] = useState([]);
   
-  useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
-      setMovie(request.data.results[Math.floor(Math.random()*request.data.results.length - 1)]);
-      return request
-    }
-    fetchData();
-  }, []);
+  useSWR(requests.fetchNetflixOriginals, (url) => axios.get(url).then((respond) => setMovie(respond.data.results[Math.floor(Math.random()*respond.data.results.length - 1)])));
 
   function truncate_string(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;

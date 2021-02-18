@@ -31,8 +31,8 @@ function App() {
 
   return (
     <div className="app">
-      <Router>
-        {!user ? Home:
+      {!user ? Home:
+        <Router>
           <Switch>
             <Route path='/' exact component={Browse}/>
             <Route path='/profiles' exact component={Profiles} />
@@ -40,8 +40,8 @@ function App() {
             <Route path='/browse' exact component={Browse} />
             <Route path='/loading' exact component={LoadingPage} />
           </Switch>
-        }
-      </Router>
+        </Router>
+      }
     </div>
   );
 }
