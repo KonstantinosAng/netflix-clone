@@ -14,6 +14,9 @@ function NotFound() {
       </div>
       <div className="not__found__message">
         <h1> Error 404! Sorry page {window.location.pathname} not found! </h1>
+        <br />
+        <br />
+        <h1> 😔 </h1>
       </div>
     </div>
   )
