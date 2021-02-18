@@ -16,6 +16,13 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (!user && window.location.pathname !== '/') {
+      window.location.replace('/');
+    }
+  
+  }, [user])
+
+  useEffect(() => {
     const authorization = auth.onAuthStateChanged((Auth) => {
       if (Auth) {
         dispatch(login({
@@ -32,7 +39,7 @@ function App() {
 
   return (
     <div className="app">
-      {!user ? Home:
+      {!user ? <Home /> :
         <Router>
           <Switch>
             <Route path='/' exact component={Profiles}/>

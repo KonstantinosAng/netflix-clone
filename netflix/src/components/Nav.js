@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Nav.css';
 import axios from 'axios';
 import requests from '../extras/requests.js';
-import { useDispatch } from 'react-redux';
-import { logout } from '../extras/userSlice.js';
+import { auth } from '../extras/firebase.js';
 import useSWR, { SWRConfig } from 'swr';
 
 function Nav({ fetchUrl }) {
@@ -15,7 +14,6 @@ function Nav({ fetchUrl }) {
   const [movies, setMovies] = useState([]);
   const [showBellPopup, setShowBellPopup] = useState(false);
   const [showNavListPopup, setShowNavListPopup] = useState(false);
-  const dispatch = useDispatch();
 
   useSWR(fetchUrl, (url) => axios.get(url).then((respond) => setMovies(respond.data.results.slice(0, 7))));
 
@@ -147,6 +145,10 @@ function Nav({ fetchUrl }) {
     }
   }
 
+  function handleSignOut() {
+    auth.signOut();
+  }
+
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img 
@@ -247,7 +249,7 @@ function Nav({ fetchUrl }) {
         <div onMouseOut={handlePopupHide} onMouseOver={handlePopupShow} className="nav__avatar__popup__col">
           <h5 onClick={handleRedirectProfilePage} className="nav__avatar__popup__2__profiles first__element"> Account </h5>
           <h5 className="nav__avatar__popup__2__profiles"> Help Centre </h5>
-          <h5 onClick={() => dispatch(logout)} className="nav__avatar__popup__2__profiles last__element"> Sign out of Netflix </h5>
+          <h5 onClick={handleSignOut} className="nav__avatar__popup__2__profiles last__element"> Sign out of Netflix </h5>
         </div>
       </div>
     </div>
