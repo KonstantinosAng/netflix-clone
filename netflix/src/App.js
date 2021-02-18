@@ -34,7 +34,7 @@ function App() {
       {!user ? Home:
         <Router>
           <Switch>
-            <Route path='/' exact component={Browse}/>
+            <Route path='/' exact component={Profiles}/>
             <Route path='/profiles' exact component={Profiles} />
             <Route path='/profile' exact component={Profile} />
             <Route path='/browse' exact component={Browse} />

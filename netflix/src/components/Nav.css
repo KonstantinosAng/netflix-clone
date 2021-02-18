@@ -19,6 +19,7 @@
   padding: 1.25rem;
   transition-timing-function: ease-in;
   transition: all .7s;
+  backdrop-filter: blur(1px);
 }
 
 .nav__logo {
