@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Home.css';
+import SignUp from './SignUp.js';
 import SignIn from './SignIn.js';
 
 function Home() {
 
   const [showAlert, setShowAlert] = useState(false);
+  const [signUp, setSignUp] = useState(false);
   const [signIn, setSignIn] = useState(false);
 
   function handleRedirect() {
@@ -22,7 +24,7 @@ function Home() {
       } else {
         setShowAlert(false);
         mail.style.borderBottom = 'none';
-        setSignIn(true);
+        setSignUp(true);
       }
     }
   }
@@ -31,6 +33,7 @@ function Home() {
     <div className="login__root">
       <div className="login__banner">
         <img
+        onClick={() => window.location.reload()}
         className="login__logo"
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="Netflix Logo"
@@ -39,7 +42,8 @@ function Home() {
       </div>
       <div className="login__fade__top"></div>
       <div className="login__body">
-        {signIn ? (<SignIn />) :
+        {signUp ? (<SignUp mail={document.getElementById('email').value} />) :
+        signIn ? (<SignIn />) :
         ( <>
             <div className="login__body__row">
               <h1 className="login__body__header"> Unlimited Movies, TV shows, and more. </h1>

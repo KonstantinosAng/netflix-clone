@@ -1,13 +1,20 @@
-import React, { useState , useRef} from 'react'
+import React, { useState, useRef, useEffect} from 'react'
 import { auth } from '../extras/firebase.js';
 import './SignIn.css';
+import SignUp from './SignUp.js';
 
 function SignIn() {
 
   const [showAlert, setShowAlert] = useState(false);
+  const [signUp, setSignUp] = useState(false);
 
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+
+  useEffect(() => {
+    document.getElementsByClassName('login__button')[0].style.display = 'none';
+    document.getElementsByClassName('login__banner')[0].style.cursor = 'pointer';
+  }, [])
 
   function handleSignIn(event) {
     event.preventDefault();
@@ -39,33 +46,24 @@ function SignIn() {
     }
   }
 
-  function handleRegister(event) {
-    event.preventDefault();
-
-    auth.createUserWithEmailAndPassword(
-      emailRef.current.value,
-      passwordRef.current.value
-    ).then((user) => {
-      console.log(user);
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
-
   return (
     <div className="signIn__root">
-      <h1 className="signIn__header"> Sign In </h1>
-      <form>
-        <input ref={emailRef} id="email" type="mail" className="signIn__input__mail" placeholder="Email" />
-        <div id="alert" className={`alertSignIn login__body__alert ${showAlert && "show__alert"}`} />
-        <input ref={passwordRef} type="password" className="signIn__input__password" placeholder="Password" />
-        <button onClick={handleSignIn} type="submit" className="signIn__button"> Sign In </button>
-        <div id="alert__error" className={`alertSignIn alert__error login__body__alert ${showAlert && "show__alert"}`} />
-        <h4 className="signIn__signUp"> 
-          <span className="signIn__span__gray"> New to Netflix? </span>
-          <span onClick={handleRegister} className="signIn__span__white"> Sign up now. </span>
-        </h4>
-      </form>
+      {signUp ? <SignUp /> :
+        <>
+          <h1 className="signIn__header"> Sign In </h1>
+          <form>
+            <input ref={emailRef} id="email" type="mail" className="signIn__input__mail" placeholder="Email" />
+            <div id="alert" className={`alertSignIn login__body__alert ${showAlert && "show__alert"}`} />
+            <input ref={passwordRef} type="password" className="signIn__input__password" placeholder="Password" />
+            <button onClick={handleSignIn} type="submit" className="signIn__button"> Sign In </button>
+            <div id="alert__error" className={`alertSignIn alert__error login__body__alert ${showAlert && "show__alert"}`} />
+            <h4 className="signIn__signUp"> 
+              <span className="signIn__span__gray"> New to Netflix? </span>
+              <span onClick={() => setSignUp(true)} className="signIn__span__white"> Sign up now. </span>
+            </h4>
+          </form>
+        </>
+      }
     </div>
   )
 }
