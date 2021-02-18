@@ -1,0 +1,13 @@
+.not__found {
+  background: black;
+  color: #e50914;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.not__found__message {
+  position: relative;
+  top: 25%;
+}

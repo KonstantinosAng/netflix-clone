@@ -3,6 +3,7 @@ import Profiles from './pages/Profiles.js';
 import Home from './pages/Home.js';
 import Profile from './pages/Profile.js';
 import LoadingPage from './pages/LoadingPage.js';
+import NotFound from './pages/NotFound.js';
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { auth } from './extras/firebase.js';
@@ -39,6 +40,7 @@ function App() {
             <Route path='/profile' exact component={Profile} />
             <Route path='/browse' exact component={Browse} />
             <Route path='/loading' exact component={LoadingPage} />
+            <Route component={NotFound} />
           </Switch>
         </Router>
       }
