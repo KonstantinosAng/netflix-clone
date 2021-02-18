@@ -6,7 +6,7 @@ function NotFound() {
     <div className="not__found">
       <div className="profile__row__banner">
         <img
-          onClick={() => window.location.reload()}
+          onClick={() => window.location.replace('/')}
           className="profile__logo"
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
           alt="Netflix Logo"
