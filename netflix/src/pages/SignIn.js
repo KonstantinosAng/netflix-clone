@@ -32,6 +32,7 @@ function SignIn() {
           console.log(res);
         }).catch((error) => {
           document.getElementById('alert__error').innerHTML = error.message;
+          document.getElementsByClassName('signIn__input__password')[0].value = '';
           setShowAlert(true);
         });
       }
