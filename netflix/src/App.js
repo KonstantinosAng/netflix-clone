@@ -32,13 +32,15 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <Switch>
-          <Route path='/' exact component={!user ? Home : Browse}/>
-          <Route path='/profiles' exact component={!user ? Home : Profiles} />
-          <Route path='/profile' exact component={!user ? Home : Profile} />
-          <Route path='/browse' exact component={!user ? Home : Browse} />
-          <Route path='/loading' exact component={!user ? Home : LoadingPage} />
-        </Switch>
+        {!user ? Home:
+          <Switch>
+            <Route path='/' exact component={Browse}/>
+            <Route path='/profiles' exact component={Profiles} />
+            <Route path='/profile' exact component={Profile} />
+            <Route path='/browse' exact component={Browse} />
+            <Route path='/loading' exact component={LoadingPage} />
+          </Switch>
+        }
       </Router>
     </div>
   );
