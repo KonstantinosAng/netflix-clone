@@ -12,6 +12,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
   const [trailerUrl, setTrailerUrl] = useState("");
   const [movie__, setMovie__] = useState([]);
   var scrollAmount = 0;
+  const image = isLargeRow?'.row__poster':'.row__posterLarge';
 
   // useSWR(fetchUrl, (url) => axios.get(url).then((respond) => setMovies(respond.data.results)));
   useEffect(() => {
@@ -62,27 +63,27 @@ function Row({ title, fetchUrl, isLargeRow }) {
   function handleHideNavCarret() {
     document.getElementById('leftCarret').style.display = 'block';
   }
-
+  console.log(title.split(' ')[0]);
   function sliderScrollLeft() {
-    document.querySelector('.row__posters').scrollTo({
+    document.querySelector(`.${title.split(' ')[0]}`).scrollTo({
       top: 0,
-      left: scrollAmount -= document.querySelector('.row__poster').clientWidth*5,
+      left: scrollAmount -= document.querySelector(image).clientWidth*5,
       behavior: "smooth",
     });
   }
 
   function sliderScrollRight() {
-    document.querySelector('.row__posters').scrollTo({
+    document.querySelector(`.${title.split(' ')[0]}`).scrollTo({
       top: 0,
-      left: scrollAmount += document.querySelector('.row__poster').clientWidth*5,
+      left: scrollAmount += document.querySelector(image).clientWidth*5,
       behavior: "smooth",
     });
   }
-  console.log(movies);
+
   return (
     <div className="row">
       <h2>{title}</h2>
-      <div className="row__posters">
+      <div className={`row__posters ${title.split(' ')[0]}`}>
         {movies?.map(movie => (
           <img
           key={movie?.id}
