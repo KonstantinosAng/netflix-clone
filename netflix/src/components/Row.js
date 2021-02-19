@@ -70,6 +70,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
       left: scrollAmount -= document.querySelector(image).clientWidth*2.5,
       behavior: "smooth",
     });
+    if (scrollAmount <= 0) { scrollAmount = 0; }
   }
 
   function sliderScrollRight() {
@@ -78,6 +79,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
       left: scrollAmount += document.querySelector(image).clientWidth*2.5,
       behavior: "smooth",
     });
+    if (scrollAmount <= 0) { scrollAmount = 0; }
   }
 
   return (
