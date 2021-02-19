@@ -63,7 +63,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
   function handleHideNavCarret() {
     document.getElementById('leftCarret').style.display = 'block';
   }
-  console.log(title.split(' ')[0]);
+
   function sliderScrollLeft() {
     document.querySelector(`.${title.split(' ')[0]}`).scrollTo({
       top: 0,
