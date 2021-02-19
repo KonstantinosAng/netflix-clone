@@ -48,25 +48,27 @@
 .switchRowleft {
   display: flex;
   position: absolute;
-  left: .5rem;
+  left: 1rem;
   height: 10vw;
   max-height: 10vw;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   object-fit: contain;
+  backdrop-filter: blur(2px);
 }
 
 .switchRowRight {
   display: flex;
   position: absolute;
-  right: .5rem;
+  right: 1rem;
   height: 10vw;
   max-height: 10vw;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   object-fit: contain;
+  backdrop-filter: blur(2px);
 }
 
 .switchLargeRow {

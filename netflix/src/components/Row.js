@@ -93,10 +93,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
           alt={movie?.name} />
         ))}
         <div onClick={sliderScrollLeft} onMouseOver={handleShowNavCarret} onMouseOut={handleHideNavCarret} className={`switchRowleft ${isLargeRow && "switchLargeRow"}`}>
-          <a id="leftCarret" className="switch"> {`<`} </a>
+          <a onClick={sliderScrollLeft} id="leftCarret" className="switch"> {`<`} </a>
         </div>
         <div onClick={sliderScrollRight} onMouseOver={handleShowNavCarret} onMouseOut={handleHideNavCarret} className={`switchRowRight ${isLargeRow && "switchLargeRow"}`}>
-          <a id="rightCarret" className="switch"> {`>`} </a>
+          <a onClick={sliderScrollRight} id="rightCarret" className="switch"> {`>`} </a>
         </div>
       </div>
       <div className="row__popup">
