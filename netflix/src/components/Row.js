@@ -61,7 +61,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
   }
 
   function handleHideNavCarret() {
-    document.getElementById('leftCarret').style.display = 'block';
+    document.getElementById('leftCarret').style.display = 'none';
   }
 
   function sliderScrollLeft() {
@@ -92,10 +92,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
           src={`${requests.baseUrl}${isLargeRow ? movie?.poster_path : movie?.backdrop_path}`} 
           alt={movie?.name} />
         ))}
-        <div onClick={sliderScrollLeft} onMouseOver={handleShowNavCarret} onMouseOut={handleHideNavCarret} className={`switchRowleft ${isLargeRow && "switchLargeRow"}`}>
+        <div onClick={sliderScrollLeft} className={`switchRowleft ${isLargeRow && "switchLargeRow"}`}>
           <a onClick={sliderScrollLeft} id="leftCarret" className="switch"> {`<`} </a>
         </div>
-        <div onClick={sliderScrollRight} onMouseOver={handleShowNavCarret} onMouseOut={handleHideNavCarret} className={`switchRowRight ${isLargeRow && "switchLargeRow"}`}>
+        <div onClick={sliderScrollRight} className={`switchRowRight ${isLargeRow && "switchLargeRow"}`}>
           <a onClick={sliderScrollRight} id="rightCarret" className="switch"> {`>`} </a>
         </div>
       </div>

@@ -48,8 +48,9 @@
 .switchRowleft {
   display: flex;
   position: absolute;
-  left: 1rem;
+  left: 0;
   height: 10vw;
+  width: 3vw;
   max-height: 10vw;
   justify-content: center;
   align-items: center;
@@ -61,8 +62,9 @@
 .switchRowRight {
   display: flex;
   position: absolute;
-  right: 1rem;
+  right: 0;
   height: 10vw;
+  width: 3vw;
   max-height: 10vw;
   justify-content: center;
   align-items: center;
@@ -78,10 +80,11 @@
 
 .switch {
   cursor: pointer;
-  transition: all ease 700ms;
+  transition: all ease 300ms;
   transform: scaleY(3) scale(2);
+  color: lightgray;
 }
 
 .switch:hover {
-  transform: scaleY(3) scale(2.3);
+  transform: scaleY(3) scale(3);
 }
