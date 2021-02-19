@@ -67,7 +67,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
   function sliderScrollLeft() {
     document.querySelector(`.${title.split(' ')[0]}`).scrollTo({
       top: 0,
-      left: scrollAmount -= document.querySelector(image).clientWidth*5,
+      left: scrollAmount -= document.querySelector(image).clientWidth*2.5,
       behavior: "smooth",
     });
   }
@@ -75,7 +75,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
   function sliderScrollRight() {
     document.querySelector(`.${title.split(' ')[0]}`).scrollTo({
       top: 0,
-      left: scrollAmount += document.querySelector(image).clientWidth*5,
+      left: scrollAmount += document.querySelector(image).clientWidth*2.5,
       behavior: "smooth",
     });
   }
