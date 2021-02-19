@@ -33,8 +33,6 @@ function App() {
     return authorization;
   }, [])
 
-
-
   return (
     <div className="app">
       {!user ? <Home /> :
