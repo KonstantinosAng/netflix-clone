@@ -15,4 +15,3 @@ netflix/npm-debug.log*
 netflix/yarn-debug.log*
 netflix/yarn-error.log*
 netflix/src/extras/firebase.js
-netflix/src/extras/requests.js
