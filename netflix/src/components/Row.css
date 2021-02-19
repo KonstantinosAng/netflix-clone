@@ -44,3 +44,42 @@
   width: 100%;
   justify-content: space-between;
 }
+
+.switchRowleft {
+  display: flex;
+  position: absolute;
+  left: .5rem;
+  height: 10vw;
+  max-height: 10vw;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
+.switchRowRight {
+  display: flex;
+  position: absolute;
+  right: .5rem;
+  height: 10vw;
+  max-height: 10vw;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
+.switchLargeRow {
+  height: 25vw;
+  max-height: 25vw;
+}
+
+.switch {
+  cursor: pointer;
+  transition: all ease 700ms;
+  transform: scaleY(3) scale(2);
+}
+
+.switch:hover {
+  transform: scaleY(3) scale(2.3);
+}

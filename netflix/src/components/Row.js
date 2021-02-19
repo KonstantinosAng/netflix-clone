@@ -11,6 +11,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
   const [movie__, setMovie__] = useState([]);
+  var scrollAmount = 0;
 
   // useSWR(fetchUrl, (url) => axios.get(url).then((respond) => setMovies(respond.data.results)));
   useEffect(() => {
@@ -54,6 +55,30 @@ function Row({ title, fetchUrl, isLargeRow }) {
     document.getElementsByClassName("youtubeVideo").play();
   }
 
+  function handleShowNavCarret() {
+    document.getElementById('leftCarret').style.display = 'block';
+  }
+
+  function handleHideNavCarret() {
+    document.getElementById('leftCarret').style.display = 'block';
+  }
+
+  function sliderScrollLeft() {
+    document.querySelector('.row__posters').scrollTo({
+      top: 0,
+      left: scrollAmount -= document.querySelector('.row__poster').clientWidth*5,
+      behavior: "smooth",
+    });
+  }
+
+  function sliderScrollRight() {
+    document.querySelector('.row__posters').scrollTo({
+      top: 0,
+      left: scrollAmount += document.querySelector('.row__poster').clientWidth*5,
+      behavior: "smooth",
+    });
+  }
+  console.log(movies);
   return (
     <div className="row">
       <h2>{title}</h2>
@@ -66,6 +91,12 @@ function Row({ title, fetchUrl, isLargeRow }) {
           src={`${requests.baseUrl}${isLargeRow ? movie?.poster_path : movie?.backdrop_path}`} 
           alt={movie?.name} />
         ))}
+        <div onClick={sliderScrollLeft} onMouseOver={handleShowNavCarret} onMouseOut={handleHideNavCarret} className={`switchRowleft ${isLargeRow && "switchLargeRow"}`}>
+          <a id="leftCarret" className="switch"> {`<`} </a>
+        </div>
+        <div onClick={sliderScrollRight} onMouseOver={handleShowNavCarret} onMouseOut={handleHideNavCarret} className={`switchRowRight ${isLargeRow && "switchLargeRow"}`}>
+          <a id="rightCarret" className="switch"> {`>`} </a>
+        </div>
       </div>
       <div className="row__popup">
         {trailerUrl && <YouTube videoId={trailerUrl} opt={opts} onReady={handleVideo} className="youtubeVideo" />}
