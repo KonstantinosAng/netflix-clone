@@ -8,6 +8,7 @@ import VideoDescription from './VideoDescription.js';
 // import useSWR from 'swr';
 
 function Row({ title, fetchUrl, isLargeRow }) {
+
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
   const [movie__, setMovie__] = useState([]);
@@ -56,36 +57,51 @@ function Row({ title, fetchUrl, isLargeRow }) {
     document.getElementsByClassName("youtubeVideo").play();
   }
 
-  function handleShowNavCarret() {
-    document.getElementById('leftCarret').style.display = 'block';
+  function handleShowNavCarret(className) {
+    const maxWidth = document.querySelector(`.${title.split(' ')[0]}`).scrollWidth/2 + 950;
+    if (scrollAmount > 0) {
+      document.getElementById(className+'LeftCarret').style.display = 'block';
+    }
+    if (scrollAmount < maxWidth) {
+      document.getElementById(className+'RightCarret').style.display = 'block';
+    }
   }
 
-  function handleHideNavCarret() {
-    document.getElementById('leftCarret').style.display = 'none';
+  function handleHideNavCarret(className) {
+    document.getElementById(className+'RightCarret').style.display = 'none';
+    document.getElementById(className+'LeftCarret').style.display = 'none';
   }
 
   function sliderScrollLeft() {
+    const maxWidth = document.querySelector(`.${title.split(' ')[0]}`).scrollWidth/2 + 950;
     document.querySelector(`.${title.split(' ')[0]}`).scrollTo({
       top: 0,
       left: scrollAmount -= document.querySelector(image).clientWidth*2.5,
       behavior: "smooth",
     });
     if (scrollAmount <= 0) { scrollAmount = 0; }
+    if (scrollAmount > maxWidth) { scrollAmount = maxWidth; }
   }
 
   function sliderScrollRight() {
+    const maxWidth = document.querySelector(`.${title.split(' ')[0]}`).scrollWidth/2 + 950;
     document.querySelector(`.${title.split(' ')[0]}`).scrollTo({
       top: 0,
       left: scrollAmount += document.querySelector(image).clientWidth*2.5,
       behavior: "smooth",
     });
     if (scrollAmount <= 0) { scrollAmount = 0; }
+    if (scrollAmount > maxWidth) { scrollAmount = maxWidth; }
+  }
+
+  function handleScroll() {
+    scrollAmount = document.querySelector(`.${title.split(' ')[0]}`).scrollLeft;
   }
 
   return (
     <div className="row">
       <h2>{title}</h2>
-      <div className={`row__posters ${title.split(' ')[0]}`}>
+      <div onScroll={handleScroll} onMouseOver={() => handleShowNavCarret(title.split(' ')[0])} onMouseOut={() => handleHideNavCarret(title.split(' ')[0])} className={`row__posters ${title.split(' ')[0]}`}>
         {movies?.map(movie => (
           <img
           key={movie?.id}
@@ -95,10 +111,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
           alt={movie?.name} />
         ))}
         <div onClick={sliderScrollLeft} className={`switchRowleft ${isLargeRow && "switchLargeRow"}`}>
-          <a onClick={sliderScrollLeft} id="leftCarret" className="switch"> {`<`} </a>
+          <a onClick={sliderScrollLeft} id={`${title.split(' ')[0]+'LeftCarret'}`} className="switch"> {`<`} </a>
         </div>
         <div onClick={sliderScrollRight} className={`switchRowRight ${isLargeRow && "switchLargeRow"}`}>
-          <a onClick={sliderScrollRight} id="rightCarret" className="switch"> {`>`} </a>
+          <a onClick={sliderScrollRight} id={`${title.split(' ')[0]+'RightCarret'}`} className="switch"> {`>`} </a>
         </div>
       </div>
       <div className="row__popup">

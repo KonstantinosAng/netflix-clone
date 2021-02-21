@@ -79,6 +79,7 @@
 }
 
 .switch {
+  display: none;
   cursor: pointer;
   transition: all ease 300ms;
   transform: scaleY(3) scale(2);
