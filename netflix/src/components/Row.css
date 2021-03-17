@@ -1,8 +1,11 @@
 .row {
-  margin-left: 20px;
   color: white;
   touch-action: pan-y;
   user-select: none;
+}
+
+.row > h2 {
+  margin-left: 20px;
 }
 
 .row__posters {
@@ -49,33 +52,31 @@
   display: flex;
   position: absolute;
   left: 0;
-  height: 10vw;
+  height: 9vw;
   width: 3vw;
-  max-height: 10vw;
+  max-height: 9vw;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   object-fit: contain;
-  backdrop-filter: blur(2px);
 }
 
 .switchRowRight {
   display: flex;
   position: absolute;
   right: 0;
-  height: 10vw;
+  height: 9vw;
   width: 3vw;
-  max-height: 10vw;
+  max-height: 9vw;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   object-fit: contain;
-  backdrop-filter: blur(2px);
 }
 
 .switchLargeRow {
-  height: 25vw;
-  max-height: 25vw;
+  height: 24vw;
+  max-height: 24vw;
 }
 
 .switch {
@@ -87,5 +88,5 @@
 }
 
 .switch:hover {
-  transform: scaleY(3) scale(3);
+  transform: scaleY(2.8) scale(2.8);
 }
