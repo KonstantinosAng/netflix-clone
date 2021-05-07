@@ -9,9 +9,11 @@ import React, { useEffect } from 'react';
 import { auth } from './extras/firebase.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './extras/userSlice.js';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
 
+  const [_, loading] = useAuthState(auth);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -30,6 +32,12 @@ function App() {
     })
     return authorization;
   }, [])
+
+  if (loading) {
+    return (
+      <LoadingPage />
+    )
+  }
 
   return (
     <div className="app">
