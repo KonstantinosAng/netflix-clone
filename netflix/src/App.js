@@ -27,7 +27,7 @@ function App() {
         ));
       } else {
         dispatch(logout);
-        window.history.replaceState('', 'Netflix', '/');
+        window.history.replaceState('', 'Netflix', '/netflix/');
       }
     })
     return authorization;
@@ -42,13 +42,12 @@ function App() {
   return (
     <div className="app">
       {!user ? <Home /> :
-        <Router>
+        <Router basename="/netflix">
           <Switch>
             <Route path='/' exact component={Profiles}/>
             <Route path='/profiles' exact component={Profiles} />
             <Route path='/profile' exact component={Profile} />
             <Route path='/browse' exact component={Browse} />
-            <Route path='/loading' exact component={LoadingPage} />
             <Route component={NotFound} />
           </Switch>
         </Router>

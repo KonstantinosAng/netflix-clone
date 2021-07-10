@@ -120,11 +120,11 @@ function Nav({ fetchUrl }) {
   }
 
   function handleRedirect() {
-    window.location.replace('/profiles');
+    window.location.replace('/netflix/profiles');
   }
 
   function handleRedirectProfilePage() {
-    window.location.replace('/profile');
+    window.location.replace('/netflix/profile');
   }
 
   function handleNavPopupShow() {

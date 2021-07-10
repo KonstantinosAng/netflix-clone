@@ -14,13 +14,13 @@ function SignUp({ mail }) {
   function handleSignUp(event) {
     event.preventDefault();
     const mail_element = document.getElementById('email');
-    if (mail === '') {
+    if (mail_element.value === '') {
       setShowAlert(true);
       document.getElementById('alert').innerHTML = 'Email is required!';
       mail_element.style.borderBottom = '2px solid orange';
     } else {
       var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-      if (!pattern.test(mail)) {
+      if (!pattern.test(mail_element.value)) {
         document.getElementById('alert').innerHTML = 'Invalid email address!';
         mail_element.style.borderBottom = '2px solid orange';
         setShowAlert(true);
