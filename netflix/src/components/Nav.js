@@ -147,7 +147,7 @@ function Nav({ fetchUrl }) {
 
   function handleSignOut() {
     auth.signOut();
-    window.location.replace('/');
+    window.location.replace('/netflix');
   }
 
   return (
