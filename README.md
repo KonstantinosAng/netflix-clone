@@ -3,7 +3,7 @@
 A Netflix clone using [React JS](https://reactjs.org) & [Redux JS](https://redux.js.org) for the front-end, the [TMDB](https://www.themoviedb.org) API for the data and [Firebase](https://firebase.google.com) for authorization and authentication. Inspired by [this tutorial](https://www.youtube.com/watch?v=XtMThy8QKqU)
 
 <div align="center">
-  <h1><a href="https://constantine.dev:8080/netflix"> DEMO </a></h1>
+  <h1><a href="https://netflix.constantine.dev"> DEMO </a></h1>
 </div>
 
 ## Requirements
