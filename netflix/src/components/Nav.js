@@ -124,11 +124,11 @@ function Nav({ fetchUrl }) {
   }
 
   function handleRedirect() {
-    window.location.replace("/netflix/profiles");
+    window.location.replace("/profiles");
   }
 
   function handleRedirectProfilePage() {
-    window.location.replace("/netflix/profile");
+    window.location.replace("/profile");
   }
 
   function handleNavPopupShow() {
@@ -153,7 +153,7 @@ function Nav({ fetchUrl }) {
 
   function handleSignOut() {
     auth.signOut();
-    window.location.replace("/netflix");
+    window.location.replace("/");
   }
 
   return (

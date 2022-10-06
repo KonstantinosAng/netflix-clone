@@ -1,12 +1,12 @@
-import React from 'react'
-import './NotFound.css';
+import React from "react";
+import "./NotFound.css";
 
 function NotFound() {
   return (
     <div className="not__found">
       <div className="profile__row__banner">
         <img
-          onClick={() => window.location.replace('/netflix')}
+          onClick={() => window.location.replace("/")}
           className="profile__logo"
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
           alt="Netflix Logo"
@@ -19,7 +19,7 @@ function NotFound() {
         <h1> 😔 </h1>
       </div>
     </div>
-  )
+  );
 }
 
-export default NotFound
+export default NotFound;

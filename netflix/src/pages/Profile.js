@@ -10,12 +10,12 @@ function Profile() {
   const [activePlan, setActivePlan] = useState("premium");
 
   function handleRedirectBrowse() {
-    window.location.replace("/netflix/");
+    window.location.replace("/");
   }
 
   function handleSignOut() {
     auth.signOut();
-    window.location.replace("/netflix/");
+    window.location.replace("/");
   }
 
   useEffect(() => {

@@ -30,7 +30,7 @@ function Profiles() {
   }
 
   function handleRedirect() {
-    window.location.replace("/netflix/browse");
+    window.location.replace("/browse");
   }
 
   useEffect(() => {
