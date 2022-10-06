@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="app">
       {!user ? <Home /> :
-        <Router basename="/netflix">
+        <Router basename="/">
           <Switch>
             <Route path='/' exact component={Profiles}/>
             <Route path='/profiles' exact component={Profiles} />
