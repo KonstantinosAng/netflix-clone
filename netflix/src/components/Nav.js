@@ -209,7 +209,11 @@ function Nav({ fetchUrl }) {
         <span className="bell__popup__carret">&#9660;</span>
         <div className="bell__popup__col">
           {movies.map((movie) => (
-            <div id={movie.id} className="bell__popup__row">
+            <div
+              key={`${movie?.title}-${movie.id}`}
+              id={movie.id}
+              className="bell__popup__row"
+            >
               <img
                 key={movie.id}
                 className="bell__popup__posters"

@@ -1,5 +1,6 @@
 .login__root {
-  background: url(https://assets.nflxext.com/ffe/siteui/vlv3/538717c0-f271-40e9-a99e-b07f9c521322/881b6b9a-eef3-4c67-8757-f5aa72f40fc7/GR-en-20210201-popsignuptwoweeks-perspective_alpha_website_small.jpg) center no-repeat;
+  background: url(https://assets.nflxext.com/ffe/siteui/vlv3/538717c0-f271-40e9-a99e-b07f9c521322/881b6b9a-eef3-4c67-8757-f5aa72f40fc7/GR-en-20210201-popsignuptwoweeks-perspective_alpha_website_small.jpg)
+    center no-repeat;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -18,12 +19,12 @@
   right: 0;
   left: 0;
   z-index: 1;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(
     to top,
-    rgba(0, 0, 0, .8) 0,
+    rgba(0, 0, 0, 0.8) 0,
     rgba(0, 0, 0, 0) 60%,
-    rgba(0, 0, 0, .8) 100%
+    rgba(0, 0, 0, 0.8) 100%
   );
 }
 
@@ -41,10 +42,10 @@
   cursor: pointer;
   padding: 7px 17px;
   line-height: normal;
-  margin: 2vw 0;
+  margin: 1.1rem 0;
   box-sizing: border-box;
   border: none;
-  border-radius: 6%;
+  border-radius: 4px;
   font-family: sans-serif;
   float: right;
 }
@@ -106,8 +107,8 @@
   border-radius: 5px;
 }
 
-.login__body__email[type='email'] {
-  padding-left: .5rem;
+.login__body__email[type="email"] {
+  padding-left: 0.5rem;
   color: black;
   font-weight: bold;
 }
@@ -132,7 +133,7 @@
 .login__body__alert {
   color: orange;
   z-index: 1;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   display: none;
 }
 

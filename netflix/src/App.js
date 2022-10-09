@@ -4,12 +4,7 @@ import Home from "./pages/Home.js";
 import Profile from "./pages/Profile.js";
 import LoadingPage from "./pages/LoadingPage.js";
 import NotFound from "./pages/NotFound.js";
-import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import React, { useEffect } from "react";
 import { auth } from "./extras/firebase.js";
 import { useDispatch, useSelector } from "react-redux";
@@ -36,7 +31,7 @@ function App() {
       }
     });
     return authorization;
-  }, []);
+  }, [dispatch]);
 
   if (loading) {
     return <LoadingPage />;
