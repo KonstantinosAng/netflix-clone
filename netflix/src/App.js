@@ -21,8 +21,10 @@ function App() {
       if (Auth) {
         dispatch(
           login({
+            displayName: Auth.displayName,
             uid: Auth.uid,
             email: Auth.email,
+            photoUrl: Auth.photoURL,
           })
         );
       } else {

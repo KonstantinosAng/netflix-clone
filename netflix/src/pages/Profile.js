@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../extras/userSlice.js";
 import { auth } from "../extras/firebase.js";
 import Avatar from "../assets/avatar.png";
+import Logo from "../assets/logo.svg";
 
 function Profile() {
   const user = useSelector(selectUser);
@@ -41,12 +42,14 @@ function Profile() {
     <div className="profile__root">
       <div className="profile__row__banner">
         <img
+          loading="lazy"
           onClick={handleRedirectBrowse}
           className="profile__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          src={Logo}
           alt="Netflix Logo"
         />
         <img
+          loading="lazy"
           className="profile__avatar__nav"
           src={Avatar}
           alt="Netflix User Avatar"
@@ -56,6 +59,7 @@ function Profile() {
         <h1 className="profile__body__header"> Edit Profile </h1>
         <div className="profile__body__row">
           <img
+            loading="lazy"
             className="profile__body__avatar"
             src={Avatar}
             alt="Netflix User Avatar"
@@ -63,6 +67,7 @@ function Profile() {
           <div className="profile__body__col">
             <input
               type="mail"
+              readOnly
               className="profile__body__input"
               placeholder="Email"
               value={user["email"]}

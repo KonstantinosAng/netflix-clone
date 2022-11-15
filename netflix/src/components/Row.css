@@ -25,8 +25,9 @@
   width: 100vw;
   max-height: 10vw;
   transition: transform 500ms;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 .row__poster:hover {
@@ -59,6 +60,7 @@
   align-items: center;
   box-sizing: border-box;
   object-fit: contain;
+  z-index: 2;
 }
 
 .switchRowRight {
@@ -72,11 +74,13 @@
   align-items: center;
   box-sizing: border-box;
   object-fit: contain;
+  z-index: 2;
 }
 
 .switchLargeRow {
   height: 24vw;
   max-height: 24vw;
+  z-index: 2;
 }
 
 .switch {

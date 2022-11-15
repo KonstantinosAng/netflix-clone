@@ -18,11 +18,11 @@
   cursor: pointer;
 }
 
-.profile__avatar__nav {  
+.profile__avatar__nav {
   object-fit: contain;
   cursor: pointer;
   width: 2rem;
-  top: .95rem;
+  top: 0.95rem;
   margin: 2vw 2vw;
 }
 
@@ -38,7 +38,7 @@
 
 .profile__body__header {
   color: white;
-  border-bottom: 2px solid rgb(30, 30, 30, .9);
+  border-bottom: 2px solid rgb(30, 30, 30, 0.9);
   margin-bottom: 1rem;
   font-size: 3rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -60,7 +60,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  border-bottom: 2px solid rgb(30, 30, 30, .9);
+  border-bottom: 2px solid rgb(30, 30, 30, 0.9);
 }
 
 .profile__body__avatar {
@@ -73,6 +73,7 @@
   box-sizing: border-box;
   border: none;
   height: 2rem;
+  margin-bottom: 4px;
   background-color: gray;
   caret-color: white;
   border-radius: 2px;
@@ -93,7 +94,7 @@
 }
 
 .profile__body__input__plans {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -147,4 +148,4 @@
 
 .signout__button:focus {
   outline: none;
-} 
+}

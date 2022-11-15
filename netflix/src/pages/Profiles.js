@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Logo from "../assets/logo.svg";
 import "./Profiles.css";
 import Avatar from "../assets/avatar.png";
 
@@ -73,229 +74,87 @@ function Profiles() {
     <div className="profile">
       <div className="fade__top"></div>
       <img
+        loading="lazy"
         onClick={Reload}
         className="netflix__logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+        src={Logo}
         alt="Netflix Logo"
       />
       <div className="profile__col">
         <h1 className="profile__header"> Who's Watching? </h1>
         <div className="profile__row">
-          <div
-            onMouseOut={() => handleHoverOff(["user1__avatar", "user1__name"])}
-            onMouseOver={() => handleHoverOn(["user1__avatar", "user1__name"])}
-            className="profile__user"
-          >
-            <img
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user1__avatar", "user1__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user1__avatar", "user1__name"])
-              }
-              id="user1__avatar"
-              className="profile__avatar"
-              src={Avatar}
-              alt="Netflix User Avatar"
-            />
-            <h3
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user1__avatar", "user1__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user1__avatar", "user1__name"])
-              }
-              id="user1__name"
-              className="profile__avatar__name"
-            >
-              {" "}
-              User 1{" "}
-            </h3>
-            <svg
-              className={`svg__edit ${toggleButton && "show__edit"}`}
-              id="edit"
-              viewBox="0 0 32 32"
-            >
-              <path
-                fill="currentColor"
-                d="M16 0c8.833 0 16 7.167 16 16 0 8.8-7.167 16-16 16s-16-7.2-16-16c0-8.833 7.167-16 16-16zM16 1.7c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zM22.333 12.9l0.3-0.267 0.867-0.867c0.467-0.5 0.4-0.767 0-1.167l-1.767-1.767c-0.467-0.467-0.767-0.4-1.167 0l-0.867 0.867-0.267 0.3zM18.3 11.1l-8.6 8.6-0.833 3.767 3.767-0.833 0.967-1 7.633-7.6z"
-              />
-            </svg>
-          </div>
-          <div
-            onMouseOut={() => handleHoverOff(["user2__avatar", "user2__name"])}
-            onMouseOver={() => handleHoverOn(["user2__avatar", "user2__name"])}
-            className="profile__user"
-          >
-            <img
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user2__avatar", "user2__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user2__avatar", "user2__name"])
-              }
-              id="user2__avatar"
-              className="profile__avatar"
-              src={Avatar}
-              alt="Netflix User Avatar"
-            />
-            <h3
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user2__avatar", "user2__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user2__avatar", "user2__name"])
-              }
-              id="user2__name"
-              className="profile__avatar__name"
-            >
-              {" "}
-              User 2{" "}
-            </h3>
-            <svg
-              className={`svg__edit ${toggleButton && "show__edit"}`}
-              id="edit"
-              viewBox="0 0 32 32"
-            >
-              <path
-                fill="currentColor"
-                d="M16 0c8.833 0 16 7.167 16 16 0 8.8-7.167 16-16 16s-16-7.2-16-16c0-8.833 7.167-16 16-16zM16 1.7c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zM22.333 12.9l0.3-0.267 0.867-0.867c0.467-0.5 0.4-0.767 0-1.167l-1.767-1.767c-0.467-0.467-0.767-0.4-1.167 0l-0.867 0.867-0.267 0.3zM18.3 11.1l-8.6 8.6-0.833 3.767 3.767-0.833 0.967-1 7.633-7.6z"
-              />
-            </svg>
-          </div>
-          <div
-            onMouseOut={() => handleHoverOff(["user3__avatar", "user3__name"])}
-            onMouseOver={() => handleHoverOn(["user3__avatar", "user3__name"])}
-            className="profile__user"
-          >
-            <img
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user3__avatar", "user3__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user3__avatar", "user3__name"])
-              }
-              id="user3__avatar"
-              className="profile__avatar"
-              src={Avatar}
-              alt="Netflix User Avatar"
-            />
-            <h3
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user3__avatar", "user3__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user3__avatar", "user3__name"])
-              }
-              id="user3__name"
-              className="profile__avatar__name"
-            >
-              {" "}
-              User 3{" "}
-            </h3>
-            <svg
-              className={`svg__edit ${toggleButton && "show__edit"}`}
-              id="edit"
-              viewBox="0 0 32 32"
-            >
-              <path
-                fill="currentColor"
-                d="M16 0c8.833 0 16 7.167 16 16 0 8.8-7.167 16-16 16s-16-7.2-16-16c0-8.833 7.167-16 16-16zM16 1.7c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zM22.333 12.9l0.3-0.267 0.867-0.867c0.467-0.5 0.4-0.767 0-1.167l-1.767-1.767c-0.467-0.467-0.767-0.4-1.167 0l-0.867 0.867-0.267 0.3zM18.3 11.1l-8.6 8.6-0.833 3.767 3.767-0.833 0.967-1 7.633-7.6z"
-              />
-            </svg>
-          </div>
-          <div
-            onMouseOut={() => handleHoverOff(["user4__avatar", "user4__name"])}
-            onMouseOver={() => handleHoverOn(["user4__avatar", "user4__name"])}
-            className="profile__user"
-          >
-            <img
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user4__avatar", "user4__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user4__avatar", "user4__name"])
-              }
-              id="user4__avatar"
-              className="profile__avatar"
-              src={Avatar}
-              alt="Netflix User Avatar"
-            />
-            <h3
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user4__avatar", "user4__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user4__avatar", "user4__name"])
-              }
-              id="user4__name"
-              className="profile__avatar__name"
-            >
-              {" "}
-              User 4{" "}
-            </h3>
-            <svg
-              className={`svg__edit ${toggleButton && "show__edit"}`}
-              id="edit"
-              viewBox="0 0 32 32"
-            >
-              <path
-                fill="currentColor"
-                d="M16 0c8.833 0 16 7.167 16 16 0 8.8-7.167 16-16 16s-16-7.2-16-16c0-8.833 7.167-16 16-16zM16 1.7c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zM22.333 12.9l0.3-0.267 0.867-0.867c0.467-0.5 0.4-0.767 0-1.167l-1.767-1.767c-0.467-0.467-0.767-0.4-1.167 0l-0.867 0.867-0.267 0.3zM18.3 11.1l-8.6 8.6-0.833 3.767 3.767-0.833 0.967-1 7.633-7.6z"
-              />
-            </svg>
-          </div>
-          <div
-            onMouseOut={() => handleHoverOff(["user5__avatar", "user5__name"])}
-            onMouseOver={() => handleHoverOn(["user5__avatar", "user5__name"])}
-            className="profile__user"
-          >
-            <img
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user5__avatar", "user5__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user5__avatar", "user5__name"])
-              }
-              id="user5__avatar"
-              className="profile__avatar"
-              src={Avatar}
-              alt="Netflix User Avatar"
-            />
-            <h3
-              onClick={handleRedirect}
-              onMouseOut={() =>
-                handleHoverOff(["user5__avatar", "user5__name"])
-              }
-              onMouseOver={() =>
-                handleHoverOn(["user5__avatar", "user5__name"])
-              }
-              id="user5__name"
-              className="profile__avatar__name"
-            >
-              {" "}
-              Children{" "}
-            </h3>
-            <svg
-              className={`svg__edit ${toggleButton && "show__edit"}`}
-              id="edit"
-              viewBox="0 0 32 32"
-            >
-              <path
-                fill="currentColor"
-                d="M16 0c8.833 0 16 7.167 16 16 0 8.8-7.167 16-16 16s-16-7.2-16-16c0-8.833 7.167-16 16-16zM16 1.7c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zM22.333 12.9l0.3-0.267 0.867-0.867c0.467-0.5 0.4-0.767 0-1.167l-1.767-1.767c-0.467-0.467-0.767-0.4-1.167 0l-0.867 0.867-0.267 0.3zM18.3 11.1l-8.6 8.6-0.833 3.767 3.767-0.833 0.967-1 7.633-7.6z"
-              />
-            </svg>
-          </div>
+          {Array(5)
+            .fill(1)
+            .map((arr, idx) => (
+              <div
+                key={`avatar_user_${idx}`}
+                onMouseOut={() =>
+                  handleHoverOff([
+                    `user${idx + 1}__avatar`,
+                    `user${idx + 1}__name`,
+                  ])
+                }
+                onMouseOver={() =>
+                  handleHoverOn([
+                    `user${idx + 1}__avatar`,
+                    `user${idx + 1}__name`,
+                  ])
+                }
+                className="profile__user"
+              >
+                <div className="profile__avatar__container">
+                  <img
+                    loading="lazy"
+                    onClick={handleRedirect}
+                    onMouseOut={() =>
+                      handleHoverOff([
+                        `user${idx + 1}__avatar`,
+                        `user${idx + 1}__name`,
+                      ])
+                    }
+                    onMouseOver={() =>
+                      handleHoverOn([
+                        `user${idx + 1}__avatar`,
+                        `user${idx + 1}__name`,
+                      ])
+                    }
+                    id={`user${idx + 1}__avatar`}
+                    className="profile__avatar"
+                    src={Avatar}
+                    alt="Netflix User Avatar"
+                  />
+                  <svg
+                    className={`svg__edit ${toggleButton && "show__edit"}`}
+                    id="edit"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M16 0c8.833 0 16 7.167 16 16 0 8.8-7.167 16-16 16s-16-7.2-16-16c0-8.833 7.167-16 16-16zM16 1.7c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zM22.333 12.9l0.3-0.267 0.867-0.867c0.467-0.5 0.4-0.767 0-1.167l-1.767-1.767c-0.467-0.467-0.767-0.4-1.167 0l-0.867 0.867-0.267 0.3zM18.3 11.1l-8.6 8.6-0.833 3.767 3.767-0.833 0.967-1 7.633-7.6z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  onClick={handleRedirect}
+                  onMouseOut={() =>
+                    handleHoverOff([
+                      `user${idx + 1}__avatar`,
+                      `user${idx + 1}__name`,
+                    ])
+                  }
+                  onMouseOver={() =>
+                    handleHoverOn([
+                      `user${idx + 1}__avatar`,
+                      `user${idx + 1}__name`,
+                    ])
+                  }
+                  id={`user${idx + 1}__name`}
+                  className="profile__avatar__name"
+                >
+                  {idx !== 4 ? `User ${idx + 1}` : "Children"}
+                </h3>
+              </div>
+            ))}
         </div>
         <div
           onClick={() => setToggleButton(toggleButton ? false : true)}

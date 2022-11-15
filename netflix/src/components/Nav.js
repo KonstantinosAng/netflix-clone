@@ -5,6 +5,9 @@ import requests from "../extras/requests.js";
 import { auth } from "../extras/firebase.js";
 import useSWR, { SWRConfig } from "swr";
 import Avatar from "../assets/avatar.png";
+import Logo from "../assets/logo.svg";
+import { useSelector } from "react-redux";
+import { selectUser } from "../extras/userSlice";
 
 function Nav({ fetchUrl }) {
   const [show, handleShow] = useState(false);
@@ -14,6 +17,7 @@ function Nav({ fetchUrl }) {
   const [movies, setMovies] = useState([]);
   const [showBellPopup, setShowBellPopup] = useState(false);
   const [showNavListPopup, setShowNavListPopup] = useState(false);
+  const user = useSelector(selectUser);
 
   useSWR(fetchUrl, (url) =>
     axios
@@ -159,9 +163,10 @@ function Nav({ fetchUrl }) {
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img
+        loading="lazy"
         onClick={Reload}
         className="nav__logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+        src={Logo}
         alt="Netflix Logo"
       />
       <div className="nav__row">
@@ -215,6 +220,7 @@ function Nav({ fetchUrl }) {
               className="bell__popup__row"
             >
               <img
+                loading="lazy"
                 key={movie.id}
                 className="bell__popup__posters"
                 src={`${requests.baseUrl}${movie.backdrop_path}`}
@@ -261,12 +267,15 @@ function Nav({ fetchUrl }) {
           onClick={handleClick}
         ></i>
       </div>
-      <img
-        onMouseOver={handlePopupShow}
-        className="nav__avatar"
-        src={Avatar}
-        alt="Netflix User Avatar"
-      />
+      {user?.photoUrl && (
+        <img
+          loading="lazy"
+          onMouseOver={handlePopupShow}
+          className="nav__avatar"
+          src={user?.photoUrl}
+          alt="Netflix User Avatar"
+        />
+      )}
       <span onMouseOver={handlePopupShow} className="nav__avatar__carret">
         &#9660;
       </span>
@@ -281,6 +290,7 @@ function Nav({ fetchUrl }) {
           <span className="nav__avatar__popup__carret">&#9660;</span>
           <div className="nav__avatar__popup__row">
             <img
+              loading="lazy"
               className="nav__avatar__popup__user"
               src={Avatar}
               alt="Netflix User Avatar"
@@ -289,6 +299,7 @@ function Nav({ fetchUrl }) {
           </div>
           <div className="nav__avatar__popup__row">
             <img
+              loading="lazy"
               className="nav__avatar__popup__user"
               src={Avatar}
               alt="Netflix User Avatar"
@@ -297,6 +308,7 @@ function Nav({ fetchUrl }) {
           </div>
           <div className="nav__avatar__popup__row">
             <img
+              loading="lazy"
               className="nav__avatar__popup__user"
               src={Avatar}
               alt="Netflix User Avatar"
@@ -305,6 +317,7 @@ function Nav({ fetchUrl }) {
           </div>
           <div className="nav__avatar__popup__row">
             <img
+              loading="lazy"
               className="nav__avatar__popup__user"
               src={Avatar}
               alt="Netflix User Avatar"
